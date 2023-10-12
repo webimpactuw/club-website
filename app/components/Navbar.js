@@ -22,10 +22,10 @@ export default function Navbar() {
       <div className="h-14 max-w-7xl p-4 mx-auto flex items-center justify-between">
         <Link href="/" className="font-medium text-lg md:hover:underline">
           <Image
-            src="/logo_light.png"
+            src="/logo_main.svg"
             alt="Web Impact Logo"
-            width={150}
-            height={40}
+            width={175}
+            height={60}
             priority
           />
         </Link>
