@@ -5,7 +5,7 @@ const outfit = Outfit({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Web Impact',
-  description: 'Students creating pro-bono websites for local businesses and organizations.',
+  description: 'Students creating pro-bono websites for local businesses and organizations.'
 }
 
 export default function RootLayout({ children }) {
