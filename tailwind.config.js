@@ -13,7 +13,11 @@ module.exports = {
         'light-text': '#F9F8FC',
         'dark-purple': '#1E095B',
         'gray': '#E5E5E5',
-      }
+      },
+
+      backgroundImage: {
+        'home': "url('/home-bg.png')",
+      },
     },
   },
   plugins: [],

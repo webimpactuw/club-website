@@ -29,13 +29,13 @@ export default function Navbar() {
             priority
           />
         </Link>
-          <ul className="flex items-center justify-end space-x-20 text-sm font-medium">
-            {navigationData.map((item) => (
-              <li className="md:hover:underline" key={item.href}>
-                <Link href={item.href}>{item.title}</Link>
-              </li>
-            ))}
-          </ul>
+        <ul className="flex items-center justify-end space-x-20 text-sm font-medium">
+          {navigationData.map((item) => (
+            <li className="md:hover:underline" key={item.href}>
+              <Link href={item.href}>{item.title}</Link>
+            </li>
+          ))}
+        </ul>
       </div>
     </nav>
   );
