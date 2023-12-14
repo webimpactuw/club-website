@@ -1,11 +1,27 @@
 import Image from "next/image";
 import Button from "./components/Button";
 import CTA from "./components/CTA";
+import Card from "./components/Card";
 
 export default function Home() {
+  const values = [
+    {
+      value: "Community",
+      description: "Fostering an inclusive community where everyone can share their passions for web development."
+    },
+    {
+      value: "Service",
+      description: "Empowering local, underserved organizations and communities by providing prro-bono websites."
+    },
+    {
+      value: "Learning",
+      description: "Provide free access to tailored web design & development workshops led by our teaching officers."
+    },
+  ]
   return (
     <div>
-      <header className="bg-dark-purple py-20 px-10 flex items-center justify-center bg-home">
+      {/* Header */}
+      <header className="bg-dark-purple py-40 px-10 flex items-center justify-center bg-home">
         <h1 className="text-white text-5xl mr-16 font-extrabold">
           Designing, Developing, and <br/> <span className="text-primary">Impacting</span> our Communities
         </h1>
@@ -15,10 +31,11 @@ export default function Home() {
             foundation for students and facilitates the creation of pro-bono websites for local communities
             and organizations within the Seattle area.
           </p>
-          <Button href="/about">Join our Discord</Button>
+          <Button href="https://discord.gg/GqfcCyvWxU">Join our Discord</Button>
         </div>
       </header>
 
+      {/* What we do */}
       <div className="py-20 px-10 text-center">
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
@@ -48,6 +65,25 @@ export default function Home() {
 
             <CTA href="/projects">Check out our past projects</CTA>
           </div>
+        </div>
+      </div>
+
+      {/* Core values */}
+      <div className="py-20 px-10 text-center">
+        <h2 className="text-5xl font-extrabold mb-10">Our Core Values</h2>
+
+        <h3 className="text-gray-secondary font-bold opacity-60">
+          Embodying our commitment to the greater good, these values shape our mission to harness the potential of technology for positive change.
+        </h3>
+
+        {/* Value cards */}
+        <div className="flex justify-center mt-20">
+          {values.map((value) => (
+            <Card className="mx-5">
+              <h3 className="text-2xl font-bold mb-3">{value.value}</h3>
+              <p className="text-gray-secondary opacity-60">{value.description}</p>
+            </Card>
+          ))}
         </div>
       </div>
     </div>
