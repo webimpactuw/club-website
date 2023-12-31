@@ -1,5 +1,6 @@
 import { client } from "@/sanity/lib/client";
 import PageHeader from "../components/PageHeader";
+import Week from "../components/Week";
 
 async function getWeeks() {
   const query = `*[_type == "week"] {
@@ -33,10 +34,31 @@ export default async function Schedule() {
           <div className="flex-1 ...">Topic</div>
         </div>
       </div>
+
+      {/* <div className="flex items-center justify-around">
+        <h4>Week</h4>
+        <h4>Date</h4>
+        <h4>Workshop</h4>
+        <h4>Topic</h4>
+      </div> */}
+      {/* <Week
+        weeknum="Week"
+        date="Date"
+        workshop="Workshop"
+        topic="Topic"
+        bold={true}
+      /> */}
       <div>
-        {/* {weeks.map((week, index) => (
-          <h1 key={index}>{week.topic}</h1>
-        ))} */}
+        {weeks.map((week, index) => (
+          <Week
+            key={index}
+            weeknum={week.weeknum}
+            date={week.date}
+            workshop={week.workshop}
+            topic={week.topic}
+            bold={false}
+          />
+        ))}
       </div>
     </div>
   );
