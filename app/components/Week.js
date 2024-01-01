@@ -1,13 +1,11 @@
 export default function Week({ weeknum, date, workshop, topic, bold }) {
-  let styling = "flex items-center justify-around";
-  styling = bold ? (styling += " font-bold") : styling;
+  let styling = "grid grid-cols-4 gap-4 text-left";
+  styling = bold ? (styling += " font-bold text-xl") : styling;
   return (
     <div>
       <ul className={styling}>
         <li>{weeknum}</li>
-        <div>
-          <li>{date}</li>
-        </div>
+        <li>{date}</li>
         <li>{workshop}</li>
         <li>{topic}</li>
       </ul>

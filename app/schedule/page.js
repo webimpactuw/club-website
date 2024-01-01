@@ -1,14 +1,13 @@
 import { client } from "@/sanity/lib/client";
+import Container from "../components/Container";
 import PageHeader from "../components/PageHeader";
 import Week from "../components/Week";
 
+// To fix bug where data is not immediately updated from Sanity
+export const revalidate = 60;
+
 async function getWeeks() {
-  const query = `*[_type == "week"] {
-    weeknum,
-    date,
-    workshop,
-    topic
-  }`;
+  const query = `*[_type == "week"] | order(weeknum asc)`;
   const weeks = await client.fetch(query);
   return weeks;
 }
@@ -18,46 +17,30 @@ export default async function Schedule() {
 
   return (
     <div className="m-14">
-      {/* <div className="relative flex py-5 items-center">
-        <h1 className="font-bold text-4xl">Fall Workshop Schedule</h1>
-        <div className="mx-8 flex-grow border-t border-gray-400"></div>
-      </div> */}
       <PageHeader displayText="Fall Workshop Schedule" />
+      {/* Topic Categories */}
+      <Container>
+        <Week
+          weeknum="Week"
+          date="Date"
+          workshop="Workshop"
+          topic="Topic"
+          bold={true}
+        />
+      </Container>
 
-      <div className="m-14 font-bold text-xl">
-        <div className="flex ...">
-          <div className="flex-1 ...">Week</div>
-          <div className="contents">
-            <div className="flex-1 ...">Date</div>
-            <div className="flex-1 ...">Workshop</div>
-          </div>
-          <div className="flex-1 ...">Topic</div>
-        </div>
-      </div>
-
-      {/* <div className="flex items-center justify-around">
-        <h4>Week</h4>
-        <h4>Date</h4>
-        <h4>Workshop</h4>
-        <h4>Topic</h4>
-      </div> */}
-      {/* <Week
-        weeknum="Week"
-        date="Date"
-        workshop="Workshop"
-        topic="Topic"
-        bold={true}
-      /> */}
+      {/* Grab all weeks and put into a Week */}
       <div>
         {weeks.map((week, index) => (
-          <Week
-            key={index}
-            weeknum={week.weeknum}
-            date={week.date}
-            workshop={week.workshop}
-            topic={week.topic}
-            bold={false}
-          />
+          <Container key={index}>
+            <Week
+              weeknum={week.weeknum}
+              date={week.date}
+              workshop={week.workshop}
+              topic={week.topic}
+              bold={false}
+            />
+          </Container>
         ))}
       </div>
     </div>
