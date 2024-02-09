@@ -67,7 +67,7 @@ export default function Home() {
       </header>
 
       {/* What we do */}
-      <div className="max-w-screen-2xl mx-auto p-4 sm:p-10 py-6 sm:py-16 text-center">
+      <div className="max-w-screen-2xl mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
         <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0">
@@ -117,7 +117,7 @@ export default function Home() {
       </div>
 
       {/* Core values */}
-      <div className="max-w-screen-2xl mx-auto flex flex-col gap-12 p-4 sm:p-10 py-6 sm:py-16 text-center">
+      <div className="max-w-screen-2xl mx-auto flex flex-col gap-12 p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold">Our Core Values</h2>
 
         <h3 className="text-gray-secondary font-bold opacity-60 mx-8">
@@ -139,7 +139,7 @@ export default function Home() {
       </div>
 
       {/* Photo carousel */}
-      <div className="max-w-screen-2xl mx-auto p-4 sm:p-10 py-6 sm:py-16 text-center">
+      <div className="max-w-screen-2xl mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">Photos</h2>
 
         <Carousel

@@ -16,7 +16,8 @@ export default async function Schedule() {
   const weeks = await getWeeks();
 
   return (
-    <div className="m-14">
+    <div className="max-w-screen-2xl p-4 sm:p-8 md:p-12 mx-auto">
+      {/* TODO: Make page header configurable via Sanity */}
       <PageHeader displayText="Fall Workshop Schedule" />
       {/* Topic Categories */}
       <Container>
@@ -29,20 +30,17 @@ export default async function Schedule() {
         />
       </Container>
 
+      {/* TODO: Restructure grid for mobile viewing? */}
       {/* Grab all weeks and put into a Week */}
-      <div>
-        {weeks.map((week, index) => (
-          <Container key={index}>
-            <Week
-              weeknum={week.weeknum}
-              date={week.date}
-              workshop={week.workshop}
-              topic={week.topic}
-              bold={false}
-            />
-          </Container>
-        ))}
-      </div>
+      {weeks.map((week, index) => (
+        <Week
+          weeknum={week.weeknum}
+          date={week.date}
+          workshop={week.workshop}
+          topic={week.topic}
+          bold={false}
+      />
+      ))}
     </div>
   );
 }
