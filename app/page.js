@@ -50,12 +50,12 @@ export default function Home() {
   return (
     <div>
       {/* Header */}
-      <header className="bg-dark-purple py-40 px-10 flex items-center justify-center bg-home">
-        <h1 className="text-white text-5xl mr-16 font-extrabold">
-          Designing, Developing, and <br />{" "}
+      <header className="bg-dark-purple max-w-screen-2xl mx-auto py-40 px-10 flex flex-col md:flex-row gap-8 items-center justify-center bg-home">
+        <h1 className="text-white text-5xl text-center md:text-start font-extrabold">
+          Designing, Developing, and{" "}
           <span className="text-primary">Impacting</span> our Communities
         </h1>
-        <div className="flex-col">
+        <div className="flex-col text-center md:text-start">
           <p className="text-white mb-6 max-w-screen-md">
             Web Impact is a University of Washington web design and development
             RSO that provides a technical foundation for students and
@@ -67,11 +67,11 @@ export default function Home() {
       </header>
 
       {/* What we do */}
-      <div className="py-20 px-10 text-center">
+      <div className="max-w-screen-2xl mx-auto p-4 sm:p-10 py-6 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
-        <div className="flex justify-center">
-          <div className="max-w-xl text-left mx-5">
+        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0">
+          <div className="flex flex-col gap-4 items-center md:items-start max-w-xl text-center md:text-left">
             <Image
               src="/teaching.svg"
               alt="What We Do"
@@ -82,7 +82,7 @@ export default function Home() {
               Web Design & Development Workshops
             </h2>
 
-            <p className="my-6">
+            <p>
               Our weekly workshops allow students of all skill levels to learn
               web design and development, preparing them to create impactful
               websites for real organizations during our project phase of the
@@ -92,9 +92,9 @@ export default function Home() {
             <CTA href="/schedule">Check out our workshop schedule</CTA>
           </div>
 
-          <div className="border-l border-gray-300 mx-20"></div>
+          <div className="h-0 md:h-64 border-l border-gray-300 mx-10"></div>
 
-          <div className="max-w-xl text-left mx-5">
+          <div className="flex flex-col gap-4 items-center md:items-start max-w-xl text-center md:text-left">
             <Image
               src="/community.svg"
               alt="What We Do"
@@ -105,7 +105,7 @@ export default function Home() {
               Pro-bono Websites for Local Businesses
             </h2>
 
-            <p className="my-6">
+            <p>
               Starting in Winter, we form student teams to build free websites
               for underserved communities and local businesses in Seattle,
               offering practical experience and real impact.
@@ -117,18 +117,18 @@ export default function Home() {
       </div>
 
       {/* Core values */}
-      <div className="py-20 px-10 text-center">
-        <h2 className="text-5xl font-extrabold mb-10">Our Core Values</h2>
+      <div className="max-w-screen-2xl mx-auto flex flex-col gap-12 p-4 sm:p-10 py-6 sm:py-16 text-center">
+        <h2 className="text-5xl font-extrabold">Our Core Values</h2>
 
-        <h3 className="text-gray-secondary font-bold opacity-60">
+        <h3 className="text-gray-secondary font-bold opacity-60 mx-8">
           Embodying our commitment to the greater good, these values shape our
           mission to harness the potential of technology for positive change.
         </h3>
 
         {/* Value cards */}
-        <div className="flex justify-center mt-20">
+        <div className="flex flex-col md:flex-row items-center mx-0 md:mx-8 gap-8">
           {values.map((value, index) => (
-            <Card key={index} className="mx-5">
+            <Card key={index}>
               <h3 className="text-2xl font-bold mb-3">{value.value}</h3>
               <p className="text-gray-secondary opacity-60">
                 {value.description}
@@ -139,7 +139,7 @@ export default function Home() {
       </div>
 
       {/* Photo carousel */}
-      <div className="py-20 px-10 text-center">
+      <div className="max-w-screen-2xl mx-auto p-4 sm:p-10 py-6 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">Photos</h2>
 
         <Carousel

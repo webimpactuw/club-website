@@ -36,10 +36,11 @@ export default function Footer() {
                     <p className="text-primary">© Web Impact UW {new Date().getFullYear()}-{new Date().getFullYear() + 1}</p>
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center gap-8">
                     {links.map(link => (
-                        <a href={link.href} target="_blank" className="mx-4" key={link.href}>
+                        <a href={link.href} target="_blank" key={link.href}>
                             <Image
+                                className="w-8 h-8 md:w-12 md:h-12 hover:bg-primary-100"
                                 src={link.image}
                                 alt={link.alt}
                                 width={30}
