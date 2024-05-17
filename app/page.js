@@ -50,19 +50,23 @@ export default function Home() {
   return (
     <div>
       {/* Header */}
-      <header className="bg-darkPurple max-w-screen-2xl mx-auto py-40 px-10 flex flex-col md:flex-row gap-8 items-center justify-center bg-home">
-        <h1 className="text-white text-5xl text-center md:text-start font-extrabold">
-          Designing, Developing, and{" "}
-          <span className="text-primary">Impacting</span> our Communities
-        </h1>
-        <div className="flex-col text-center md:text-start">
-          <p className="text-white mb-6 max-w-screen-md">
-            Web Impact is a University of Washington web design and development
-            RSO that provides a technical foundation for students and
-            facilitates the creation of pro-bono websites for local communities
-            and organizations within the Seattle area.
-          </p>
-          <Button href="https://discord.gg/GqfcCyvWxU">Join our Discord</Button>
+      <header className="bg-darkPurple flex items-center justify-center">
+        <div className="flex flex-col md:flex-row gap-8 w-screen max-w-screen-2xl py-40 px-10 bg-home">
+          <h1 className="text-white text-5xl text-center md:text-start font-extrabold">
+            Designing, Developing, and{" "}
+            <span className="text-primary">Impacting</span> our Communities
+          </h1>
+          <div className="flex-col text-center md:text-start">
+            <p className="text-white mb-6 max-w-screen-md">
+              Web Impact is a University of Washington web design and
+              development RSO that provides a technical foundation for students
+              and facilitates the creation of pro-bono websites for local
+              communities and organizations within the Seattle area.
+            </p>
+            <Button href="https://discord.gg/GqfcCyvWxU">
+              Join our Discord
+            </Button>
+          </div>
         </div>
       </header>
 

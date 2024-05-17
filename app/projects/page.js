@@ -16,23 +16,27 @@ export default async function Projects() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row md:h-16 w-full justify-between">
-          <div className="h-full w-px bg-gray"></div>
+        <div className="flex flex-col md:flex-row md:h-16 w-full items-center justify-between">
+          <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
             <p className="font-bold text-6xl text-secondary">3</p>
-            <p className="text-grayAlt h-fit my-auto">Years Total</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75">Years Total</p>
           </div>
-          <div className="h-full w-px bg-gray"></div>
+          <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
             <p className="font-bold text-6xl text-secondary">200+</p>
-            <p className="text-grayAlt h-fit my-auto">Student Contributors</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75">
+              Student Contributors
+            </p>
           </div>
-          <div className="h-full w-px bg-gray"></div>
+          <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
             <p className="font-bold text-6xl text-secondary">16</p>
-            <p className="text-grayAlt h-fit my-auto">Websites Created</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75">
+              Websites Created
+            </p>
           </div>
-          <div className="h-full w-px bg-gray"></div>
+          <div className="h-full w-px bg-gray md:h-10"></div>
         </div>
 
         <div className="flex flex-row align-center h-12">
@@ -46,7 +50,7 @@ export default async function Projects() {
           <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />
         </div>
 
-        <div className="h-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-4">
           {projects.map((project) => (
             <ProjectCard key={project.slug} project={project}>
               <p>{project.image}</p>

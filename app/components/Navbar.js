@@ -23,8 +23,8 @@ export default function Navbar() {
   const pathname = usePathname();
   if (!pathname.includes("/studio")) {
     return (
-      <nav className="sticky top-0 bg-darkPurple text-lightText z-10">
-        <div className="max-w-7xl flex flex-col sm:flex-row gap-4 sm:gap-0 p-4 mx-auto items-center justify-between">
+      <nav className="md:sticky top-0 bg-darkPurple text-lightText z-10">
+        <div className="max-w-screen-2xl flex flex-col sm:flex-row gap-4 sm:gap-0 p-4 mx-auto md:px-8 items-center justify-between">
           <Link href="/" className="font-medium text-lg md:hover:underline">
             <Image
               src="/logo_main.svg"

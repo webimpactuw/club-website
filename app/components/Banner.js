@@ -12,8 +12,7 @@ export default function Banner({ className }) {
       >
         <div className="flex justify-between items-center">
           <h1 className="text-white text-32 sm:text-2xl md:text-4xl font-bold">
-            Need a website? <br className="block sm:hidden" />
-            Let’s talk!
+            Need a website? Let’s talk!
           </h1>
           <Button href="mailto:webimpactuw@gmail.com" className="bg-white">
             <p className="text-secondary">Email Us</p>
