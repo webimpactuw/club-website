@@ -45,6 +45,7 @@ export default async function Projects() {
             src="/chevron-down.svg"
             width={12}
             height={12}
+            alt={"chevron down"}
             className="w-12 h-12"
           />
           <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />

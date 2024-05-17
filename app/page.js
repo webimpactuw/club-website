@@ -155,6 +155,7 @@ export default function Home() {
               width="0"
               height="0"
               sizes="100vw"
+              alt="University of Washington Campus"
               className="w-full h-80"
               src={
                 "https://cdn.geekwire.com/wp-content/uploads/2014/10/8618592346_e4bf2f2028_z-620x378.jpg"
@@ -167,6 +168,7 @@ export default function Home() {
               height="0"
               sizes="100vw"
               className="w-full h-80"
+              alt="University of Washington Campus"
               src={
                 "https://apru.org/wp-content/uploads/2021/12/University-of-Washington-1.jpeg"
               }
@@ -178,6 +180,7 @@ export default function Home() {
               height="0"
               sizes="100vw"
               className="w-full h-80"
+              alt="University of Washington Campus"
               src={
                 "https://cdn.geekwire.com/wp-content/uploads/2014/10/8618592346_e4bf2f2028_z-620x378.jpg"
               }
@@ -189,6 +192,7 @@ export default function Home() {
               height="0"
               sizes="100vw"
               className="w-full h-80"
+              alt="University of Washington Campus"
               src={
                 "https://apru.org/wp-content/uploads/2021/12/University-of-Washington-1.jpeg"
               }
