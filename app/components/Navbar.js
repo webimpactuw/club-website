@@ -1,19 +1,19 @@
-import Link from 'next/link';
-import Image from 'next/image';
+import Link from "next/link";
+import Image from "next/image";
 
 const navigationData = [
   {
-    title: 'About',
-    href: '/about',
+    title: "About",
+    href: "/about",
   },
   {
-    title: 'Projects',
-    href: '/projects',
+    title: "Projects",
+    href: "/projects",
   },
   {
-    title: 'Schedule',
-    href: '/schedule',
-  }
+    title: "Schedule",
+    href: "/schedule",
+  },
 ];
 
 export default function Navbar() {

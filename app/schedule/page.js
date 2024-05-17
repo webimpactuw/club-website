@@ -39,7 +39,7 @@ export default async function Schedule() {
           workshop={week.workshop}
           topic={week.topic}
           bold={false}
-      />
+        />
       ))}
     </div>
   );

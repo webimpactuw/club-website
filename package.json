@@ -14,6 +14,7 @@
     "embla-carousel-autoplay": "^8.0.0-rc19",
     "next": "13.5.4",
     "next-sanity": "^7.0.5",
+    "prettier": "^3.2.5",
     "react": "^18",
     "react-dom": "^18",
     "react-multi-carousel": "^2.8.4",
