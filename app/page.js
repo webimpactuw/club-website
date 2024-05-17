@@ -74,8 +74,8 @@ export default function Home() {
       <div className="max-w-screen-2xl mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0">
-          <div className="flex flex-col gap-4 items-center md:items-start max-w-xl text-center md:text-left">
+        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
+          <div className="flex flex-col gap-4 items-center max-w-xl text-center">
             <Image
               src="/teaching.svg"
               alt="What We Do"
@@ -98,7 +98,7 @@ export default function Home() {
 
           <div className="h-0 md:h-64 border-l border-gray-300 mx-10"></div>
 
-          <div className="flex flex-col gap-4 items-center md:items-start max-w-xl text-center md:text-left">
+          <div className="flex flex-col gap-4 items-center max-w-xl text-center">
             <Image
               src="/community.svg"
               alt="What We Do"

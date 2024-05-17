@@ -17,7 +17,9 @@ export default function ProjectCard({ project }) {
       />
       <div className="flex flex-col gap-4 md:gap-0 md:flex-row h-full">
         <div className="flex flex-col justify-center md:w-1/3">
-          <h2 className="text-lg font-semibold">{project.title}</h2>
+          <h2 className="line-clamp-1 text-lg font-semibold">
+            {project.title}
+          </h2>
           <p className="w-fit px-1 text-sm bg-lightpurple">MINORITY OWNED</p>
         </div>
         <div className="flex h-full justify-start md:justify-end md:w-2/3">

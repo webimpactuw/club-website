@@ -53,7 +53,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "deisgn_members",
+      name: "design_members",
       title: "Design Members",
       type: "string",
       validation: (Rule) => Rule.required(),
