@@ -46,49 +46,49 @@ export default {
       type: "text",
       validation: (Rule) => Rule.required(),
     },
-    {
-      name: "cm-1",
-      title: "Coding Member 1",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "cm-2",
-      title: "Coding Member 2",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "cm-3",
-      title: "Coding Member 3",
-      type: "text",
-    },
-    {
-      name: "cm-4",
-      title: "Coding Member 4",
-      type: "text",
-    },
-    {
-      name: "dm-1",
-      title: "Design Member 1",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "dm-2",
-      title: "Design Member 2",
-      type: "text",
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "dm-3",
-      title: "Design Member 3",
-      type: "text",
-    },
-    {
-      name: "dm-4",
-      title: "Design Member 4",
-      type: "text",
-    },
+    // {
+    //   name: "cm-1",
+    //   title: "Coding Member 1",
+    //   type: "text",
+    //   validation: (Rule) => Rule.required(),
+    // },
+    // {
+    //   name: "cm-2",
+    //   title: "Coding Member 2",
+    //   type: "text",
+    //   validation: (Rule) => Rule.required(),
+    // },
+    // {
+    //   name: "cm-3",
+    //   title: "Coding Member 3",
+    //   type: "text",
+    // },
+    // {
+    //   name: "cm-4",
+    //   title: "Coding Member 4",
+    //   type: "text",
+    // },
+    // {
+    //   name: "dm-1",
+    //   title: "Design Member 1",
+    //   type: "text",
+    //   validation: (Rule) => Rule.required(),
+    // },
+    // {
+    //   name: "dm-2",
+    //   title: "Design Member 2",
+    //   type: "text",
+    //   validation: (Rule) => Rule.required(),
+    // },
+    // {
+    //   name: "dm-3",
+    //   title: "Design Member 3",
+    //   type: "text",
+    // },
+    // {
+    //   name: "dm-4",
+    //   title: "Design Member 4",
+    //   type: "text",
+    // },
   ],
 };
