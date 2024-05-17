@@ -5,7 +5,6 @@ import Image from "next/image";
 
 export default async function Project({ params }) {
   const project = await getProject(params.project);
-  console.log(project[0])
 
   return (
     <>
@@ -16,9 +15,15 @@ export default async function Project({ params }) {
             <p className="line-clamp-4">{project[0].description}</p>
           </div>
           <div className="flex flex-col gap-3 justify-end align-end md:w-2/5">
-            <p><b>Lead:</b> {project[0].lead}</p>
-            <p><b>Coding:</b> {project[0].coding_members}</p>
-            <p><b>Design:</b> {project[0].design_members}</p>
+            <p>
+              <b>Lead:</b> {project[0].lead}
+            </p>
+            <p>
+              <b>Coding:</b> {project[0].coding_members}
+            </p>
+            <p>
+              <b>Design:</b> {project[0].design_members}
+            </p>
           </div>
         </div>
         <Image
