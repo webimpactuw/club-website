@@ -10,10 +10,12 @@ module.exports = {
       colors: {
         primary: "#8555EF",
         secondary: "#6A39EC",
-        "light-text": "#F9F8FC",
-        "dark-purple": "#1E095B",
+        lightText: "#F9F8FC",
+        darkPurple: "#1E095B",
         gray: "#E5E5E5",
-        "gray-secondary": "#1D1B27",
+        grayAlt: "#1D1B27",
+        darkGray: "#1D1B27",
+        lightpurple: "#E9DEF8",
       },
 
       backgroundImage: {

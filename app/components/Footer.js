@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 
 export default function Footer() {
   const pathname = usePathname();
-  
+
   const links = [
     {
       image: "./discord.svg",
@@ -28,10 +28,10 @@ export default function Footer() {
       href: "https://www.linkedin.com/company/webimpact-uw/",
     },
   ];
-  if (pathname != "/studio") {
+  if (!pathname.includes("/studio")) {
     return (
-      <footer className="bg-dark-purple px-8 md:px-20 py-4">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
+      <footer className="bg-darkPurple px-8 md:px-20 py-4">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-7xl mx-auto">
           <div className="flex flex-col items-center sm:items-left justify-center">
             <Image
               src="./logo_main.svg"

@@ -1,4 +1,4 @@
-import 'tailwindcss/tailwind.css';
+import "tailwindcss/tailwind.css";
 import "./globals.css";
 import { Outfit } from "next/font/google";
 

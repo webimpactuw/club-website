@@ -3,9 +3,9 @@
 import Button from "./Button";
 import { usePathname } from "next/navigation";
 
-export default function Banner({ className }) { 
+export default function Banner({ className }) {
   const pathname = usePathname();
-  if (pathname != "/studio") {
+  if (!pathname.includes("/studio")) {
     return (
       <div
         className={`bg-secondary text-white px-4 sm:px-8 md:px-12 py-2 sm:py-6 md:py-10 ${className || ""} w-5/6 rounded-r-full`}
