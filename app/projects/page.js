@@ -63,6 +63,8 @@ export default async function Projects() {
   );
 }
 
+export const revalidate = 60;
+
 async function getProjects() {
   const query = `*[_type == 'project'] | order(date desc) {
     title,

@@ -45,6 +45,8 @@ export default async function Project({ params }) {
   );
 }
 
+export const revalidate = 60;
+
 async function getProject(slug) {
   const query = `*[_type == 'project' && slug.current == $slug] {
     title, 
