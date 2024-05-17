@@ -12,7 +12,14 @@ export default async function Project({ params }) {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-4 md:w-3/5">
             <p className="text-4xl font-bold">{project[0].title}</p>
-            <p className="line-clamp-4">{project[0].description}</p>
+            <p>{project[0].description}</p>
+            <a
+              className="text-secondary hover:font-bold transition-all"
+              href={project[0].link}
+              target="_blank"
+            >
+              View the website here
+            </a>
           </div>
           <div className="flex flex-col gap-3 justify-end align-end md:w-2/5">
             <p>

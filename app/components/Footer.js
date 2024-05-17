@@ -8,22 +8,22 @@ export default function Footer() {
 
   const links = [
     {
-      image: "./discord.svg",
+      image: "/discord.svg",
       alt: "Discord",
       href: "https://discord.gg/GqfcCyvWxU",
     },
     {
-      image: "./instagram.svg",
+      image: "/instagram.svg",
       alt: "Instagram",
       href: "https://www.instagram.com/webimpactuw/",
     },
     {
-      image: "./github.svg",
+      image: "/github.svg",
       alt: "GitHub",
       href: "https://www.github.com/webimpactuw/",
     },
     {
-      image: "./linkedin.svg",
+      image: "/linkedin.svg",
       alt: "LinkedIn",
       href: "https://www.linkedin.com/company/webimpact-uw/",
     },
@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-4 max-w-screen-2xl mx-auto">
           <div className="flex flex-col items-center sm:items-left justify-center">
             <Image
-              src="./logo_main.svg"
+              src="/logo_main.svg"
               alt="Web Impact Logo"
               width={175}
               height={60}
