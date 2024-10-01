@@ -121,7 +121,7 @@ export default function Home() {
       </div>
 
       {/* Core values */}
-      <div className="mx-auto flex flex-col gap-12 p-4 sm:p-8 py-12 sm:py-16 text-center">
+      <div className="mx-auto flex flex-col gap-8 md:gap-12 p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold">Our Core Values</h2>
 
         <h3 className="text-grayAlt font-bold opacity-60 mx-8">

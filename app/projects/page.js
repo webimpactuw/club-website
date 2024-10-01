@@ -7,7 +7,7 @@ export default async function Projects() {
 
   return (
     <>
-      <div className="flex flex-col gap-12 p-8 md:p-12 lg:p-20 max-w-7xl mx-auto">
+      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 max-w-7xl mx-auto">
         <div className="flex flex-col gap-4 md:w-2/3 lg:w-1/2">
           <p className="text-4xl font-bold">Explore Our Work</p>
           <p className="text-lg">

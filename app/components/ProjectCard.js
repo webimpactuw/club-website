@@ -13,14 +13,14 @@ export default function ProjectCard({ project }) {
         width={1920}
         height={1080}
         alt={project.title}
-        className="w-full h-80 object-cover rounded-2xl border border-primary-400"
+        className="w-full h-80 object-cover rounded-2xl border border-primary"
       />
       <div className="flex flex-col pt-4 md:gap-0 md:flex-row">
-        <div className="flex flex-col justify-center md:w-1/3">
+        <div className="flex md:flex-col justify-between md:justify-center md:w-1/3">
           <h2 className="line-clamp-1 text-lg font-semibold">
             {project.title}
           </h2>
-          <p className="w-fit px-1 text-sm bg-lightpurple">MINORITY OWNED</p>
+          <p className="w-fit px-2 h-8 text-sm bg-lightpurple leading-8">MINORITY OWNED</p>
         </div>
         <div className="flex h-full justify-start md:justify-end md:w-2/3">
           <p className="my-auto line-clamp-2 text-md text-primary-600">
