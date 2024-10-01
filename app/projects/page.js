@@ -12,7 +12,7 @@ export default async function Projects() {
           <p className="text-4xl font-bold">Explore Our Work</p>
           <p className="text-lg">
             We build websites for a variety of local clients, prioritizing
-            underserved and minority communities with a lack of lack resources
+            underserved and minority communities with a lack of resources
           </p>
         </div>
 
@@ -31,7 +31,7 @@ export default async function Projects() {
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">16</p>
+            <p className="font-bold text-6xl text-secondary">27</p>
             <p className="text-grayAlt h-fit my-auto opacity-75">
               Websites Created
             </p>
@@ -40,7 +40,7 @@ export default async function Projects() {
         </div>
 
         <div className="flex flex-row align-center h-12">
-          <p className="text-4xl font-bold">2023 Projects</p>
+          <p className="text-4xl font-bold">2024 Projects</p>
           <Image
             src="/chevron-down.svg"
             width={12}
