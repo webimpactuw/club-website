@@ -39,7 +39,7 @@ export default async function Projects() {
           <div className="h-full w-px bg-gray md:h-10"></div>
         </div>
 
-        <div className="flex flex-row align-center h-12">
+        <div className="flex flex-row items-center h-12">
           <p className="text-4xl font-bold">2024 Projects</p>
           <Image
             src="/chevron-down.svg"
@@ -51,8 +51,8 @@ export default async function Projects() {
           <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />
         </div>
 
-        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-4">
-          {projects.map((project) => (
+        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          {projects.sort((a, b) => a.title.localeCompare(b.title)).map((project) => (
             <ProjectCard key={project.slug} project={project}>
               <p>{project.image}</p>
             </ProjectCard>

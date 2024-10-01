@@ -15,7 +15,7 @@ export default function ProjectCard({ project }) {
         alt={project.title}
         className="w-full h-80 object-cover rounded-2xl border border-primary-400"
       />
-      <div className="flex flex-col gap-4 md:gap-0 md:flex-row h-full">
+      <div className="flex flex-col pt-4 md:gap-0 md:flex-row">
         <div className="flex flex-col justify-center md:w-1/3">
           <h2 className="line-clamp-1 text-lg font-semibold">
             {project.title}
