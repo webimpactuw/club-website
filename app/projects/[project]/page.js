@@ -8,7 +8,17 @@ export default async function Project({ params }) {
 
   return (
     <>
-      <div className="flex flex-col max-w-screen-2xl gap-6 md:gap-12 p-6 md:p-20 mx-auto">
+      <div className="relative flex flex-col max-w-screen-2xl gap-6 md:gap-12 p-6 md:px-20 mx-auto">
+        <a href="/projects" className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer hover:underline md:absolute md:left-8">
+          <Image
+            src="/chevron-left.svg"
+            width={12}
+            height={12}
+            alt={"chevron left"}
+            className="w-12 h-full"
+          />
+          <p className="text-xl md:hidden">Back</p>
+        </a>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-4 md:w-3/5">
             <p className="text-4xl font-bold">{project[0].title}</p>
@@ -21,7 +31,7 @@ export default async function Project({ params }) {
               View the website here
             </a>
           </div>
-          <div className="flex flex-col gap-3 justify-end align-end md:w-2/5">
+          <div className="flex flex-col gap-3 pt-14 md:w-2/5">
             <p>
               <b>Lead:</b> {project[0].lead}
             </p>
@@ -38,7 +48,7 @@ export default async function Project({ params }) {
           width={1920}
           height={1080}
           alt={project[0].title}
-          className="h-[50vw] w-128 object-cover rounded-2xl border border-primary-400"
+          className="size-full object-contain rounded-2xl border border-primary-400"
         />
       </div>
     </>
