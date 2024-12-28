@@ -19,20 +19,20 @@ export default async function Projects() {
         <div className="flex flex-col md:flex-row md:h-16 w-full items-center justify-between">
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">3</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">Years Total</p>
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">3</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">Years Total</p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">200+</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">200+</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Student Contributors
             </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">27</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">27</p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Websites Created
             </p>
           </div>

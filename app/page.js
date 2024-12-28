@@ -51,8 +51,8 @@ export default function Home() {
     <div>
       {/* Header */}
       <header className="bg-darkPurple flex items-center justify-center">
-        <div className="flex flex-col md:flex-row gap-8 w-screen py-40 px-10 bg-home">
-          <h1 className="text-white text-5xl text-center md:text-start font-extrabold">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-24 w-screen py-40 px-10 bg-home">
+          <h1 className="text-white text-4xl sm:text-5xl text-center md:text-start font-extrabold">
             Designing, Developing, and{" "}
             <span className="text-primary">Impacting</span> our Communities
           </h1>
@@ -75,7 +75,7 @@ export default function Home() {
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
-          <div className="flex flex-col gap-4 items-center text-center">
+          <div className="flex flex-col gap-4 items-center max-w-xl text-center">
             <Image
               src="/teaching.svg"
               alt="What We Do"
@@ -98,7 +98,7 @@ export default function Home() {
 
           <div className="h-0 md:h-64 border-l border-gray-300 mx-10"></div>
 
-          <div className="flex flex-col gap-4 items-center text-center">
+          <div className="flex flex-col gap-4 items-center max-w-xl text-center">
             <Image
               src="/community.svg"
               alt="What We Do"
