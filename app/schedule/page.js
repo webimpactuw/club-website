@@ -16,7 +16,7 @@
 //   const weeks = await getWeeks();
 
 //   return (
-//     <div className="max-w-screen-2xl p-4 sm:p-8 md:p-12 mx-auto">
+//     <div className="p-4 sm:p-8 md:p-12 mx-auto">
 //       {/* TODO: Make page header configurable via Sanity */}
 //       <PageHeader displayText="Fall Workshop Schedule" />
 //       {/* Topic Categories */}

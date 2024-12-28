@@ -8,8 +8,11 @@ export default async function Project({ params }) {
 
   return (
     <>
-      <div className="relative flex flex-col max-w-screen-2xl gap-6 md:gap-12 p-6 md:px-20 mx-auto">
-        <a href="/projects" className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer hover:underline md:absolute md:left-8">
+      <div className="relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20 mx-auto">
+        <a
+          href="/projects"
+          className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer hover:underline md:absolute md:left-8"
+        >
           <Image
             src="/chevron-left.svg"
             width={12}

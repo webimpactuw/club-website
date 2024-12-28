@@ -20,7 +20,9 @@ export default function ProjectCard({ project }) {
           <h2 className="line-clamp-1 text-lg font-semibold">
             {project.title}
           </h2>
-          <p className="w-fit px-2 h-8 text-sm bg-lightpurple leading-8">MINORITY OWNED</p>
+          <p className="w-fit px-2 h-8 text-sm bg-lightpurple leading-8">
+            MINORITY OWNED
+          </p>
         </div>
         <div className="flex h-full justify-start md:justify-end md:w-2/3">
           <p className="my-auto line-clamp-2 text-md text-primary-600">

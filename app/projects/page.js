@@ -7,7 +7,7 @@ export default async function Projects() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 max-w-7xl mx-auto">
+      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 mx-auto">
         <div className="flex flex-col gap-4 md:w-2/3 lg:w-1/2">
           <p className="text-4xl font-bold">Explore Our Work</p>
           <p className="text-lg">
@@ -52,11 +52,13 @@ export default async function Projects() {
         </div>
 
         <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.sort((a, b) => a.title.localeCompare(b.title)).map((project) => (
-            <ProjectCard key={project.slug} project={project}>
-              <p>{project.image}</p>
-            </ProjectCard>
-          ))}
+          {projects
+            .sort((a, b) => a.title.localeCompare(b.title))
+            .map((project) => (
+              <ProjectCard key={project.slug} project={project}>
+                <p>{project.image}</p>
+              </ProjectCard>
+            ))}
         </div>
       </div>
     </>
