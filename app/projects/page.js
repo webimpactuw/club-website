@@ -1,6 +1,5 @@
-import ProjectCard from "../components/ProjectCard";
 import { client } from "@/sanity/lib/client";
-import Image from "next/image";
+import ProjectList from "../components/ProjectList";
 
 export default async function Projects() {
   const projects = await getProjects();
@@ -15,51 +14,37 @@ export default async function Projects() {
             underserved and minority communities with a lack of resources
           </p>
         </div>
-
         <div className="flex flex-col md:flex-row md:h-16 w-full items-center justify-between">
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">3</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">Years Total</p>
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              3
+            </p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
+              Years Total
+            </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">200+</p>
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              200+
+            </p>
             <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Student Contributors
             </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">27</p>
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              27
+            </p>
             <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Websites Created
             </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
         </div>
-
-        <div className="flex flex-row items-center h-12">
-          <p className="text-4xl font-bold">2024 Projects</p>
-          <Image
-            src="/chevron-down.svg"
-            width={12}
-            height={12}
-            alt={"chevron down"}
-            className="w-12 h-12"
-          />
-          <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />
-        </div>
-
-        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects
-            .sort((a, b) => a.title.localeCompare(b.title))
-            .map((project) => (
-              <ProjectCard key={project.slug} project={project}>
-                <p>{project.image}</p>
-              </ProjectCard>
-            ))}
-        </div>
+        <ProjectList title="2024 Projects" projects={projects} show={true} />
       </div>
     </>
   );
