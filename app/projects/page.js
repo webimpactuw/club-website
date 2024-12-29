@@ -57,7 +57,8 @@ async function getProjects() {
     title,
     description,
     'slug':slug.current,
-    image
+    image,
+    tag,
   }`;
 
   const projects = await client.fetch(query);

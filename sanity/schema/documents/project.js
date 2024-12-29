@@ -20,6 +20,11 @@ export default {
       },
     },
     {
+      name: "tag",
+      title: "Tag",
+      type: "string",
+    },
+    {
       name: "link",
       title: "Deployment Link",
       type: "string",
