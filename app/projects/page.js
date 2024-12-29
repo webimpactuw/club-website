@@ -3,6 +3,12 @@ import ProjectList from "../components/ProjectList";
 
 export default async function Projects() {
   const projects = await getProjects();
+  const years = projects.reduce((acc, p) => {
+    acc[p.year] = acc[p.year] || [];
+    acc[p.year].push(p);
+    return acc;
+  }, {});
+  const numbers = Object.keys(years).sort((a, b) => b - a);
 
   return (
     <>
@@ -44,7 +50,14 @@ export default async function Projects() {
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
         </div>
-        <ProjectList title="2024 Projects" projects={projects} show={true} />
+        {numbers.map((year, idx) => (
+          <ProjectList
+            key={idx}
+            title={year + " Projects"}
+            projects={years[year]}
+            show={idx === 0}
+          />
+        ))}
       </div>
     </>
   );
@@ -59,6 +72,7 @@ async function getProjects() {
     'slug':slug.current,
     image,
     tag,
+    year
   }`;
 
   const projects = await client.fetch(query);

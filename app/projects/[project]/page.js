@@ -25,12 +25,16 @@ export default async function Project({ params }) {
         </a>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-4 md:w-3/5">
-            <p className="text-4xl font-bold">
-              {project[0].title}
-            </p>
+            <p className="text-4xl font-bold">{project[0].title}</p>
             <div className="flex gap-2">
-              <p className={`w-fit px-2 h-8 text-sm leading-8 ${tagColors[project[0].tag?.toLowerCase()] || "bg-gray"}`}>
+              <p
+                className={`w-fit px-2 h-8 text-sm leading-8 ${tagColors[project[0].tag?.toLowerCase()] || "bg-gray"}`}
+              >
                 {project[0].tag?.toUpperCase() || ""}
+              </p>
+              <p className="w-fit px-2 h-8 text-sm leading-8 bg-gray">
+                {"YEAR: "}
+                {project[0].year}
               </p>
             </div>
             <p>{project[0].description}</p>
@@ -75,6 +79,7 @@ async function getProject(slug) {
     link, 
     image, 
     tag, 
+    year, 
     description, 
     lead, 
     coding_members,
