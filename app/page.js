@@ -51,8 +51,8 @@ export default function Home() {
     <div>
       {/* Header */}
       <header className="bg-darkPurple flex items-center justify-center">
-        <div className="flex flex-col md:flex-row gap-8 w-screen max-w-screen-2xl py-40 px-10 bg-home">
-          <h1 className="text-white text-5xl text-center md:text-start font-extrabold">
+        <div className="flex flex-col md:flex-row gap-8 md:gap-24 w-screen py-40 px-10 bg-home">
+          <h1 className="text-white text-4xl sm:text-5xl text-center md:text-start font-extrabold">
             Designing, Developing, and{" "}
             <span className="text-primary">Impacting</span> our Communities
           </h1>

@@ -1,13 +1,18 @@
-import ProjectCard from "../components/ProjectCard";
 import { client } from "@/sanity/lib/client";
-import Image from "next/image";
+import ProjectList from "../components/ProjectList";
 
 export default async function Projects() {
   const projects = await getProjects();
+  const years = projects.reduce((acc, p) => {
+    acc[p.year] = acc[p.year] || [];
+    acc[p.year].push(p);
+    return acc;
+  }, {});
+  const numbers = Object.keys(years).sort((a, b) => b - a);
 
   return (
     <>
-      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 max-w-7xl mx-auto">
+      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 mx-auto">
         <div className="flex flex-col gap-4 md:w-2/3 lg:w-1/2">
           <p className="text-4xl font-bold">Explore Our Work</p>
           <p className="text-lg">
@@ -15,49 +20,44 @@ export default async function Projects() {
             underserved and minority communities with a lack of resources
           </p>
         </div>
-
         <div className="flex flex-col md:flex-row md:h-16 w-full items-center justify-between">
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">3</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">Years Total</p>
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              {Object.keys(years).length}
+            </p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
+              Years Total
+            </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">200+</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              200+
+            </p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Student Contributors
             </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
-            <p className="font-bold text-6xl text-secondary">27</p>
-            <p className="text-grayAlt h-fit my-auto opacity-75">
+            <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
+              {projects.length}
+            </p>
+            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Websites Created
             </p>
           </div>
           <div className="h-full w-px bg-gray md:h-10"></div>
         </div>
-
-        <div className="flex flex-row items-center h-12">
-          <p className="text-4xl font-bold">2024 Projects</p>
-          <Image
-            src="/chevron-down.svg"
-            width={12}
-            height={12}
-            alt={"chevron down"}
-            className="w-12 h-12"
+        {numbers.map((year, idx) => (
+          <ProjectList
+            key={idx}
+            title={year + " Projects"}
+            projects={years[year]}
+            show={idx === 0}
           />
-          <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />
-        </div>
-
-        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {projects.sort((a, b) => a.title.localeCompare(b.title)).map((project) => (
-            <ProjectCard key={project.slug} project={project}>
-              <p>{project.image}</p>
-            </ProjectCard>
-          ))}
-        </div>
+        ))}
       </div>
     </>
   );
@@ -70,7 +70,9 @@ async function getProjects() {
     title,
     description,
     'slug':slug.current,
-    image
+    image,
+    tag,
+    year
   }`;
 
   const projects = await client.fetch(query);

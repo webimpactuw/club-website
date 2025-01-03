@@ -16,7 +16,7 @@
 //   const weeks = await getWeeks();
 
 //   return (
-//     <div className="max-w-screen-2xl p-4 sm:p-8 md:p-12 mx-auto">
+//     <div className="p-4 sm:p-8 md:p-12 mx-auto">
 //       {/* TODO: Make page header configurable via Sanity */}
 //       <PageHeader displayText="Fall Workshop Schedule" />
 //       {/* Topic Categories */}
@@ -48,7 +48,7 @@
 export default function About() {
   return (
     <div className="px-10 py-40 h-[40rem]">
-      <h1 className="text-5xl font-extrabold mb-10">In Progress ...</h1>
+      <h1 className="text-5xl font-extrabold mb-10">Coming soon...</h1>
     </div>
   );
 }

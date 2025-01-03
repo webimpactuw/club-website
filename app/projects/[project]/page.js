@@ -1,3 +1,4 @@
+import { tagColors } from "@/app/components/ProjectCard";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { tryGetImageDimensions } from "@sanity/asset-utils";
@@ -8,8 +9,11 @@ export default async function Project({ params }) {
 
   return (
     <>
-      <div className="relative flex flex-col max-w-screen-2xl gap-6 md:gap-12 p-6 md:px-20 mx-auto">
-        <a href="/projects" className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer hover:underline md:absolute md:left-8">
+      <div className="relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20 mx-auto">
+        <a
+          href="/projects"
+          className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer md:hover:underline md:absolute md:left-8 transition-opacity md:hover:opacity-50"
+        >
           <Image
             src="/chevron-left.svg"
             width={12}
@@ -22,9 +26,19 @@ export default async function Project({ params }) {
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-4 md:w-3/5">
             <p className="text-4xl font-bold">{project[0].title}</p>
+            <div className="flex gap-2">
+              <p
+                className={`w-fit px-2 h-8 text-sm leading-8 ${tagColors[project[0].tag?.toLowerCase()] || "bg-gray"}`}
+              >
+                {project[0].tag?.toUpperCase() || ""}
+              </p>
+              <p className="w-fit px-2 h-8 text-sm leading-8 bg-gray">
+                {project[0].year}
+              </p>
+            </div>
             <p>{project[0].description}</p>
             <a
-              className="text-secondary hover:font-bold transition-all"
+              className="w-fit text-secondary font-semibold hover:font-bold transition-all"
               href={project[0].link}
               target="_blank"
             >
@@ -48,7 +62,7 @@ export default async function Project({ params }) {
           width={1920}
           height={1080}
           alt={project[0].title}
-          className="size-full object-contain rounded-2xl border border-primary-400"
+          className="size-full object-contain rounded-2xl border border-primary"
         />
       </div>
     </>
@@ -63,6 +77,8 @@ async function getProject(slug) {
     slug, 
     link, 
     image, 
+    tag, 
+    year, 
     description, 
     lead, 
     coding_members,

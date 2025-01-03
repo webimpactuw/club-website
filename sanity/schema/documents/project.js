@@ -20,6 +20,17 @@ export default {
       },
     },
     {
+      name: "year",
+      title: "Year",
+      type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "tag",
+      title: "Tag",
+      type: "string",
+    },
+    {
       name: "link",
       title: "Deployment Link",
       type: "string",
