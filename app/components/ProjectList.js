@@ -10,11 +10,11 @@ export default function ProjectList({ title, projects, show }) {
   return (
     <>
       <div className="flex flex-row items-center h-12">
-        <p className="text-4xl font-bold">{title}</p>
         <button
-          className="transition-opacity md:hover:opacity-50"
+          className="flex transition-opacity md:hover:opacity-50"
           onClick={() => setOpen(!open)}
         >
+          <p className="text-4xl font-bold">{title}</p>
           {open ? (
             <Image
               src="/chevron-down.svg"

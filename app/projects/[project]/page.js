@@ -12,7 +12,7 @@ export default async function Project({ params }) {
       <div className="relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20 mx-auto">
         <a
           href="/projects"
-          className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer hover:underline md:absolute md:left-8 transition-opacity md:hover:opacity-50"
+          className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer md:hover:underline md:absolute md:left-8 transition-opacity md:hover:opacity-50"
         >
           <Image
             src="/chevron-left.svg"
@@ -33,7 +33,6 @@ export default async function Project({ params }) {
                 {project[0].tag?.toUpperCase() || ""}
               </p>
               <p className="w-fit px-2 h-8 text-sm leading-8 bg-gray">
-                {"YEAR: "}
                 {project[0].year}
               </p>
             </div>

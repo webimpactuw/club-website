@@ -24,7 +24,7 @@ export default async function Projects() {
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
             <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
-              3
+              {Object.keys(years).length}
             </p>
             <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Years Total
@@ -42,7 +42,7 @@ export default async function Projects() {
           <div className="h-full w-px bg-gray md:h-10"></div>
           <div className="flex justify-center gap-4">
             <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
-              27
+              {projects.length}
             </p>
             <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Websites Created
