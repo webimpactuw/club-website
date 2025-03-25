@@ -3,9 +3,14 @@ import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
 import { tryGetImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 
 export default async function Project({ params }) {
   const project = await getProject(params.project);
+
+  if (!project[0]) {
+    redirect("/projects");
+  }
 
   return (
     <>
