@@ -51,7 +51,7 @@ export default function Home() {
     <div>
       {/* Header */}
       <header className="bg-darkPurple flex items-center justify-center">
-        <div className="flex flex-col md:flex-row gap-8 md:gap-24 w-screen py-40 px-10 bg-home">
+        <div className="max-w-[96rem] mx-auto flex flex-col md:flex-row gap-8 md:gap-24 w-screen py-40 px-10 bg-home">
           <h1 className="text-white text-4xl sm:text-5xl text-center md:text-start font-extrabold">
             Designing, Developing, and{" "}
             <span className="text-primary">Impacting</span> our Communities
@@ -74,7 +74,7 @@ export default function Home() {
       <div className="mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">What We Do</h2>
 
-        <div className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
+        <div className="max-w-[96rem] mx-auto flex flex-col md:flex-row justify-center items-center gap-8 md:gap-0">
           <div className="flex flex-col gap-4 items-center max-w-xl text-center">
             <Image
               src="/teaching.svg"
@@ -121,7 +121,7 @@ export default function Home() {
       </div>
 
       {/* Core values */}
-      <div className="mx-auto flex flex-col gap-8 md:gap-12 p-4 sm:p-8 py-12 sm:py-16 text-center">
+      <div className="max-w-[96rem] mx-auto flex flex-col gap-8 md:gap-12 p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold">Our Core Values</h2>
 
         <h3 className="text-grayAlt font-bold opacity-60 mx-8">
@@ -141,7 +141,7 @@ export default function Home() {
       </div>
 
       {/* Photo carousel */}
-      <div className="mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
+      <div className="max-w-[96rem] mx-auto p-4 sm:p-8 py-12 sm:py-16 text-center">
         <h2 className="text-5xl font-extrabold mb-10">Photos</h2>
 
         <Carousel

@@ -36,7 +36,7 @@ export default function ProjectList({ title, projects, show }) {
         <hr className="flex-1 h-px my-auto ml-2 bg-darkGray opacity-25" />
       </div>
       {open && (
-        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="h-auto mb-4 px-0 md:px-12 lg:px-0 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
           {projects
             .sort((a, b) => a.title.localeCompare(b.title))
             .map((project) => (

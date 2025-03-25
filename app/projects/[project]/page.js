@@ -9,7 +9,7 @@ export default async function Project({ params }) {
 
   return (
     <>
-      <div className="relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20 mx-auto">
+      <div className="max-w-[96rem] mx-auto relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20">
         <a
           href="/projects"
           className="flex items-center h-8 md:h-10 w-min md:w-auto cursor-pointer md:hover:underline md:absolute md:left-8 transition-opacity md:hover:opacity-50"

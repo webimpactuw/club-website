@@ -14,6 +14,7 @@ module.exports = {
         darkPurple: "#1E095B",
         gray: "#E5E5E5",
         grayAlt: "#1D1B27",
+        grayLight: "#F9F8FC",
         darkGray: "#1D1B27",
         lightPurple: "#E9DEF8",
         lightGreen: "#D1FFBD",
