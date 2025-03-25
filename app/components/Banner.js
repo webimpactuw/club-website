@@ -9,7 +9,7 @@ export default function Banner({ className }) {
     return (
       <div className="pr-8 md:pr-24 2xl:pr-72 mx-auto">
         <div
-          className={`relative max-w-[96rem] mx-auto bg-secondary text-white px-4 sm:px-8 lg:px-12 py-2 sm:py-6 lg:py-8 w-full rounded-r-full ${className || ""}`}
+          className={`relative max-w-[84rem] mx-auto bg-secondary text-white px-4 sm:px-8 lg:px-12 py-2 sm:py-6 lg:py-8 w-full rounded-r-full ${className || ""}`}
         >
           <div className="flex justify-between items-center">
             <h1 className="text-white text-32 sm:text-2xl lg:text-4xl font-bold">
@@ -19,7 +19,7 @@ export default function Banner({ className }) {
               href="mailto:webimpactuw@gmail.com"
               className="bg-white transition-colors"
             >
-              <p className="text-secondary">Email Us</p>
+              <p className="text-secondary">Get in touch</p>
             </Button>
           </div>
           <div className="absolute top-0 w-[50vw] left-[-50vw]">
