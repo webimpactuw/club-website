@@ -9,9 +9,9 @@ import Footer from "./components/Footer";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Web Impact",
+  title: "Web Impact UW",
   description:
-    "Students creating pro-bono websites for local businesses and organizations.",
+    "Students creating free websites for local businesses and organizations.",
 };
 
 export default function RootLayout({ children }) {

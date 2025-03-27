@@ -31,7 +31,7 @@ export default function Footer() {
   if (!pathname.includes("/studio")) {
     return (
       <footer className="bg-darkPurple px-8 md:px-20 py-4">
-        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mx-auto">
+        <div className="max-w-[96rem] mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 mx-auto">
           <div className="flex flex-col items-center sm:items-left justify-center">
             <Image
               src="/logo_main.svg"

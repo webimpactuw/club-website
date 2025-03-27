@@ -12,7 +12,7 @@ export default async function Projects() {
 
   return (
     <>
-      <div className="flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 mx-auto">
+      <div className="max-w-[96rem] mx-auto flex flex-col gap-8 md:gap-12 p-8 md:p-12 lg:p-20 mx-auto">
         <div className="flex flex-col gap-4 md:w-2/3 lg:w-1/2">
           <p className="text-4xl font-bold">Explore Our Work</p>
           <p className="text-lg">
@@ -26,7 +26,7 @@ export default async function Projects() {
             <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
               {Object.keys(years).length}
             </p>
-            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
+            <p className="text-grayDark h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Years Total
             </p>
           </div>
@@ -35,7 +35,7 @@ export default async function Projects() {
             <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
               200+
             </p>
-            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
+            <p className="text-grayDark h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Student Contributors
             </p>
           </div>
@@ -44,7 +44,7 @@ export default async function Projects() {
             <p className="font-bold text-6xl text-secondary w-40 max-w-[40vw] md:w-auto text-right">
               {projects.length}
             </p>
-            <p className="text-grayAlt h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
+            <p className="text-grayDark h-fit my-auto opacity-75 w-40 max-w-[40vw] md:w-auto text-left">
               Websites Created
             </p>
           </div>
