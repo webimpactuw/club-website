@@ -21,7 +21,13 @@ export default function Banner({ className }) {
               className="bg-white transition-colors"
             >
               <p className="text-secondary hidden sm:flex">Get in touch</p>
-              <Image className="flex sm:hidden" alt="" src="/message.svg" width={24} height={24} />
+              <Image
+                className="flex sm:hidden"
+                alt=""
+                src="/message.svg"
+                width={24}
+                height={24}
+              />
             </Button>
           </div>
           <div className="absolute top-0 w-[50vw] left-[-50vw]">

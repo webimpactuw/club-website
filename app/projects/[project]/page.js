@@ -30,21 +30,23 @@ export default async function Project({ params }) {
         </a>
         <div className="flex flex-col md:flex-row gap-4">
           <div className="flex flex-col gap-4 md:w-3/5">
-            <p className="text-4xl font-bold">{project[0].title}</p>
+            <p className="text-4xl font-bold">
+              {project[0]?.title || "No title"}
+            </p>
             <div className="flex gap-2">
               <p
-                className={`w-fit px-2 h-8 text-sm leading-8 ${tagColors[project[0].tag?.toLowerCase()] || "bg-gray"}`}
+                className={`w-fit px-2 h-8 text-sm leading-8 ${tagColors[project[0]?.tag?.toLowerCase()] || "bg-gray"}`}
               >
-                {project[0].tag?.toUpperCase() || ""}
+                {project[0]?.tag?.toUpperCase() || ""}
               </p>
               <p className="w-fit px-2 h-8 text-sm leading-8 bg-gray">
-                {project[0].year}
+                {project[0]?.year}
               </p>
             </div>
-            <p>{project[0].description}</p>
+            <p>{project[0]?.description}</p>
             <a
               className="w-fit text-secondary font-semibold hover:font-bold transition-all"
-              href={project[0].link}
+              href={project[0]?.link}
               target="_blank"
             >
               View the website here
@@ -52,21 +54,21 @@ export default async function Project({ params }) {
           </div>
           <div className="flex flex-col gap-3 pt-14 md:w-2/5">
             <p>
-              <b>Lead:</b> {project[0].lead}
+              <b>Lead:</b> {project[0]?.lead}
             </p>
             <p>
-              <b>Coding:</b> {project[0].coding_members}
+              <b>Coding:</b> {project[0]?.coding_members}
             </p>
             <p>
-              <b>Design:</b> {project[0].design_members}
+              <b>Design:</b> {project[0]?.design_members}
             </p>
           </div>
         </div>
         <Image
-          src={urlForImage(project[0].image)}
+          src={project[0] ? urlForImage(project[0]?.image) : ""}
           width={1920}
           height={1080}
-          alt={project[0].title}
+          alt={project[0]?.title}
           className="size-full object-contain rounded-2xl border border-primary"
         />
       </div>
@@ -92,21 +94,4 @@ async function getProject(slug) {
 
   const projects = await client.fetch(query, { slug });
   return projects;
-}
-
-function ImageComponent({ value }) {
-  const { width, height } = tryGetImageDimensions(value);
-
-  return (
-    <Image
-      src={urlForImage(value).fit("max").auto("format").url()}
-      width={width}
-      height={height}
-      loading="lazy"
-      className="md:max-w-prose rounded-lg"
-      style={{
-        aspectRatio: width / height,
-      }}
-    />
-  );
 }

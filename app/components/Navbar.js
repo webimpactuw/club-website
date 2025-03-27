@@ -21,10 +21,11 @@ const navigationData = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  console.log(pathname);
   if (!pathname.includes("/studio")) {
     return (
       <nav
-        className={`md:sticky top-0 z-10 ${pathname === "/" ? "bg-darkPurple text-lightText" : "bg-grayLight drop-shadow-md"}`}
+        className={`md:sticky top-0 z-50 ${pathname === "/" ? "bg-darkPurple text-lightText" : "bg-grayLight drop-shadow-md"}`}
       >
         <div className="max-w-[96rem] mx-auto flex flex-col sm:flex-row gap-4 sm:gap-0 p-4 mx-auto md:px-8 items-center justify-between">
           <Link href="/" className="font-medium text-lg md:hover:underline">
