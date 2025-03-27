@@ -13,10 +13,10 @@ const navigationData = [
     title: "Projects",
     href: "/projects",
   },
-  {
-    title: "Schedule",
-    href: "/schedule",
-  },
+  // {
+  //   title: "Schedule",
+  //   href: "/schedule",
+  // },
 ];
 
 export default function Navbar() {

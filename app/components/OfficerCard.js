@@ -9,9 +9,9 @@ export default function OfficerCard({ officer, title }) {
         height={768}
         width={648}
         alt={"Picture of " + officer.name}
-        className="pointer-events-none object-cover w-[18rem] h-[24rem] h-full rounded-[2rem]"
+        className="pointer-events-none object-cover w-[18rem] h-[24rem] rounded-[2rem]"
       />
-      <div className="absolute bottom-4 left-4 right-4 p-2 bg-[#FFF8] rounded-[1rem]">
+      <div className="absolute bottom-4 left-4 right-4 p-2 bg-[#FFFA] rounded-[1rem]">
         <p className="font-bold">{officer.name}</p>
         <p>{title}</p>
       </div>

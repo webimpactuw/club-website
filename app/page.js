@@ -33,18 +33,21 @@ export default function Home() {
     {
       value: "Community",
       image: "/community.svg",
+      alt: "Earth logo",
       description:
         "Fostering an inclusive community where everyone can share their passions for web development.",
     },
     {
       value: "Service",
       image: "/service.svg",
+      alt: "Heart logo",
       description:
-        "Empowering local, underserved organizations and communities by providing prro-bono websites.",
+        "Empowering local, underserved organizations and communities by providing free-of-charge websites.",
     },
     {
       value: "Learning",
       image: "/learning.svg",
+      alt: "Student cap logo",
       description:
         "Provide free access to tailored web design & development workshops led by our teaching officers.",
     },
@@ -63,7 +66,7 @@ export default function Home() {
             <p className="text-white mb-6 max-w-screen-md">
               Web Impact is a University of Washington web design and
               development RSO that provides a technical foundation for students
-              and facilitates the creation of pro-bono websites for local
+              and facilitates the creation of free-of-charge websites for local
               communities and organizations within the Seattle area.
             </p>
             <Button target="_blank" href="https://discord.gg/GqfcCyvWxU">
@@ -85,7 +88,7 @@ export default function Home() {
             <Image
               className="h-72 w-full md:h-96 p-4"
               src="/workshops.svg"
-              alt="What We Do"
+              alt="Outlines of various students between purple blobs"
               width={80}
               height={80}
             />
@@ -109,7 +112,7 @@ export default function Home() {
             <Image
               className="h-72 w-full md:h-96 p-4"
               src="/websites.svg"
-              alt="What We Do"
+              alt="Outline of a computer between purple blobs"
               width={80}
               height={80}
             />
@@ -144,7 +147,7 @@ export default function Home() {
               <Image
                 className="p-2 bg-lightPurple rounded-full ml-auto"
                 src={value.image}
-                alt=""
+                alt={value.alt}
                 width={48}
                 height={48}
               />

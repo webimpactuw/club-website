@@ -36,8 +36,8 @@ export default async function About() {
             <div className="shrink-1">
               <p className="font-bold text-2xl">Getting Started</p>
               <p className="text-primary text-wrap">
-                Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed
-                sed{" "}
+                Our club was founded, serving our first clients and creating
+                successful projects
               </p>
             </div>
           </div>
@@ -50,10 +50,10 @@ export default async function About() {
               <p className="font-black text-3xl">‘22</p>
             </div>
             <div>
-              <p className="font-bold text-2xl">Next Thing</p>
+              <p className="font-bold text-2xl">Going Strong</p>
               <p className="text-primary">
-                Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed
-                sed{" "}
+                Project interest continues to grow, with over 200 students
+                applying for project positions
               </p>
             </div>
           </div>
@@ -66,10 +66,10 @@ export default async function About() {
               <p className="font-black text-3xl">‘23</p>
             </div>
             <div>
-              <p className="font-bold text-2xl">Current Thing</p>
+              <p className="font-bold text-2xl">The Future</p>
               <p className="text-primary">
-                Lorem ipsum dolor sit amet, conse ctetur adipiscing elit. Sed
-                sed{" "}
+                We&apos;re always looking for new ways to build community and
+                increase our impact.
               </p>
             </div>
           </div>
@@ -113,7 +113,11 @@ export default async function About() {
           {sort(officers)
             .filter((e) => e.role === "coding")
             .map((officer, index) => (
-              <OfficerCard officer={officer} title="Coding Officer" key={index} />
+              <OfficerCard
+                officer={officer}
+                title="Coding Officer"
+                key={index}
+              />
             ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
@@ -123,7 +127,11 @@ export default async function About() {
           {sort(officers)
             .filter((e) => e.role === "design")
             .map((officer, index) => (
-              <OfficerCard officer={officer} title="Design Officer" key={index} />
+              <OfficerCard
+                officer={officer}
+                title="Design Officer"
+                key={index}
+              />
             ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
@@ -133,7 +141,11 @@ export default async function About() {
           {sort(officers)
             .filter((e) => e.role === "activities")
             .map((officer, index) => (
-              <OfficerCard officer={officer} title="Activities Director" key={index} />
+              <OfficerCard
+                officer={officer}
+                title="Activities Director"
+                key={index}
+              />
             ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
@@ -143,7 +155,11 @@ export default async function About() {
           {sort(officers)
             .filter((e) => e.role === "projects")
             .map((officer, index) => (
-              <OfficerCard officer={officer} title="Project Coordinator" key={index} />
+              <OfficerCard
+                officer={officer}
+                title="Project Coordinator"
+                key={index}
+              />
             ))}
         </div>
       </div>
