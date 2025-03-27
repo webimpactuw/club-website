@@ -144,7 +144,7 @@ export default function Home() {
               <Image
                 className="p-2 bg-lightPurple rounded-full ml-auto"
                 src={value.image}
-                href=""
+                alt=""
                 width={48}
                 height={48}
               />
@@ -170,6 +170,7 @@ export default function Home() {
               width="0"
               height="0"
               sizes="100vw"
+              alt=""
               className="w-full h-80 object-cover rounded-xl"
               src={
                 "https://cdn.geekwire.com/wp-content/uploads/2014/10/8618592346_e4bf2f2028_z-620x378.jpg"

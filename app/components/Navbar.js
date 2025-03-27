@@ -21,7 +21,6 @@ const navigationData = [
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log(pathname);
   if (!pathname.includes("/studio")) {
     return (
       <nav
