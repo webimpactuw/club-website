@@ -1,6 +1,12 @@
-import Image from "next/image";
+import { client } from "@/sanity/lib/client";
+import OfficerCard from "../components/OfficerCard";
 
-export default function About() {
+export default async function About() {
+  const officers = await getOfficers();
+  const sort = (officers) => {
+    return officers.sort((a, b) => a.index - b.index);
+  };
+
   return (
     <div className="flex flex-col gap-24 lg:gap-36 max-w-[96rem] mx-auto py-12">
       <div className="flex flex-col lg:flex-row justify-between gap-8 p-8 pb-0 md:p-12">
@@ -79,10 +85,10 @@ export default function About() {
           Transforming Web Development into Community Impact
         </p>
         <p className="text-xl text-lightPurple font-light">
-          Web Impact’s mission is to make web development equitable and
+          Web Impact&apos;s mission is to make web development equitable and
           accessible to everyone. To do this, we provide workshops for people of
           all skill levels and create free of charge websites for local
-          community organizations. 
+          community organizations.
         </p>
       </div>
 
@@ -94,93 +100,67 @@ export default function About() {
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
           <p className="font-bold text-2xl w-80 shrink-0">President</p>
           <p className="lg:hidden"></p>
-          <div className="relative">
-            <Image
-              className="pointer-events-none"
-              src="/placeholder.svg"
-              alt=""
-              height={384}
-              width={324}
-            />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-bold">First Last</p>
-              <p>Officer Title / Role</p>
-            </div>
-          </div>
+          {sort(officers)
+            .filter((e) => e.role === "president")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="President" key={index} />
+            ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
           <p className="font-bold text-2xl w-80 shrink-0">Coding</p>
           <p className="lg:hidden"></p>
-          <div className="relative">
-            <Image
-              className="pointer-events-none"
-              src="/placeholder.svg"
-              alt=""
-              height={384}
-              width={324}
-            />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-bold">First Last</p>
-              <p>Officer Title / Role</p>
-            </div>
-          </div>
+          {sort(officers)
+            .filter((e) => e.role === "coding")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="Coding Officer" key={index} />
+            ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
           <p className="font-bold text-2xl w-80 shrink-0">Design</p>
           <p className="lg:hidden"></p>
-          <div className="relative">
-            <Image
-              className="pointer-events-none"
-              src="/placeholder.svg"
-              alt=""
-              height={384}
-              width={324}
-            />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-bold">First Last</p>
-              <p>Officer Title / Role</p>
-            </div>
-          </div>
+          {sort(officers)
+            .filter((e) => e.role === "design")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="Design Officer" key={index} />
+            ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
           <p className="font-bold text-2xl w-80 shrink-0">Activities</p>
           <p className="lg:hidden"></p>
-          <div className="relative">
-            <Image
-              className="pointer-events-none"
-              src="/placeholder.svg"
-              alt=""
-              height={384}
-              width={324}
-            />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-bold">First Last</p>
-              <p>Officer Title / Role</p>
-            </div>
-          </div>
+          {sort(officers)
+            .filter((e) => e.role === "activities")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="Activities Director" key={index} />
+            ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
           <p className="font-bold text-2xl w-80 shrink-0">Projects</p>
           <p className="lg:hidden"></p>
-          <div className="relative">
-            <Image
-              className="pointer-events-none"
-              src="/placeholder.svg"
-              alt=""
-              height={384}
-              width={324}
-            />
-            <div className="absolute bottom-6 left-6">
-              <p className="font-bold">First Last</p>
-              <p>Officer Title / Role</p>
-            </div>
-          </div>
+          {sort(officers)
+            .filter((e) => e.role === "projects")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="Project Coordinator" key={index} />
+            ))}
         </div>
       </div>
     </div>
   );
+}
+
+export const revalidate = 60;
+
+async function getOfficers() {
+  const query = `*[_type == 'officer'] | order(date desc) {
+    name,
+    index,
+    role,
+    image
+  }`;
+
+  const officers = await client.fetch(query);
+  return officers;
 }
