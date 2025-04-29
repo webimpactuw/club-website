@@ -48,33 +48,33 @@ export default function DateList({ title, events, show }) {
         <div className="h-auto mb-4 px-0 lg:px-12 gap-8 lg:gap-12">
           <p className="text-3xl font-black w-full mb-6">September</p>
           <div className="flex flex-col md:flex-row gap-12 items-stretch">
-            <div className="grid grid-cols-7 gap-x-8 gap-y-5 text-xl text-center">
+            <div className="grid grid-cols-7 gap-x-1 lg:gap-x-8 gap-y-5 text-xl text-center">
               {titles.map((e) => (
                 <p>{e}</p>
               ))}
               {datesPrevious.map((e) => (
-                <p className="px-2 py-1.5 opacity-[30%]">{e}</p>
+                <p className="w-10 px-2 py-1.5 opacity-[30%]">{e}</p>
               ))}
               {datesCurrent.map((e) =>
                 events.some((event) => event.day === e) ? (
                   selected === e ? (
                     <button
                       onClick={() => setSelected(-1)}
-                      className="px-2 py-1.5 relative bg-secondary text-grayLight rounded-full"
+                      className="w-10 px-2 py-1.5 relative bg-secondary text-grayLight rounded-full"
                     >
                       <p>{e}</p>
                     </button>
                   ) : (
                     <button
                       onClick={() => setSelected(e)}
-                      className="px-2 py-1.5 relative hover:bg-gray transition-colors rounded-full"
+                      className="w-10 px-2 py-1.5 relative hover:bg-gray transition-colors rounded-full"
                     >
                       <p>{e}</p>
-                      <div className="absolute left-[45%] md:left-4 -bottom-0.5 w-2 h-2 bg-secondary rounded-full" />
+                      <div className="absolute left-4 -bottom-0.5 w-2 h-2 bg-secondary rounded-full" />
                     </button>
                   )
                 ) : (
-                  <p className="px-2 py-1.5">{e}</p>
+                  <p className="w-10 px-2 py-1.5">{e}</p>
                 ),
               )}
             </div>

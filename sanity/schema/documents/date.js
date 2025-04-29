@@ -1,11 +1,11 @@
 export default {
-  name: "event",
-  title: "Event",
+  name: "eventDay",
+  title: "Day",
   type: "document",
   fields: [
     {
-      name: "weeknum",
-      title: "Week Number",
+      name: "day",
+      title: "Day Number",
       type: "number",
       validation: (Rule) => Rule.required(),
     },
@@ -16,18 +16,16 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "workshop",
-      title: "Workshop",
+      name: "title",
+      title: "Title",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "topic",
-      title: "Topic",
-      type: "string",
-      validation: (Rule) => Rule.required(),
+      name: "events",
+      title: "Event List",
+      type: "array",
+      of: [{ type: "string" }],
     },
   ],
 };
-
-// week, date, workshop, topic
