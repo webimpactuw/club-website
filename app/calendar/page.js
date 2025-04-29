@@ -3,6 +3,8 @@
 // import PageHeader from "../components/PageHeader";
 // import Week from "../components/Week";
 
+import DateList from "../components/DateList";
+
 // // To fix bug where data is not immediately updated from Sanity
 // export const revalidate = 60;
 
@@ -47,8 +49,8 @@
 
 export default function About() {
   return (
-    <div className="max-w-[96rem] mx-auto px-10 py-40 h-[40rem]">
-      <h1 className="text-5xl font-extrabold mb-10">Coming soon...</h1>
+    <div className="max-w-[96rem] mx-auto relative flex flex-col gap-6 md:gap-12 p-6 md:pt-12 md:px-20">
+      <DateList title="Fall Quarter 2024" projects={[]} show={true} />
     </div>
   );
 }
