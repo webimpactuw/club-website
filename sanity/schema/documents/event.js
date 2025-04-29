@@ -1,6 +1,6 @@
 export default {
-  name: "week",
-  title: "Week",
+  name: "event",
+  title: "Event",
   type: "document",
   fields: [
     {

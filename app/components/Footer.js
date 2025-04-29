@@ -40,8 +40,8 @@ export default function Footer() {
               height={60}
             />
             <p className="text-primary">
-              © Web Impact UW {new Date().getFullYear()}-
-              {new Date().getFullYear() + 1}
+              © Web Impact UW 2021-
+              {new Date().getFullYear()}
             </p>
           </div>
 
