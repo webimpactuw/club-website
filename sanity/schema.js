@@ -1,7 +1,8 @@
-import eventDay from "./schema/documents/date";
+// TODO: Import eventDay schema
 import project from "./schema/documents/project";
 import officer from "./schema/documents/officer";
 
 export const schema = {
-  types: [eventDay, project, officer],
+  // TODO: Export eventDay schema
+  types: [project, officer],
 };

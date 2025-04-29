@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function DateList({ title, events, show }) {
@@ -9,7 +10,7 @@ export default function DateList({ title, events, show }) {
 
   useEffect(() => {
     setDayEvents(events.find((e) => e.day === selected));
-  }, [selected]);
+  }, [events, selected]);
 
   const titles = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const datesPrevious = Array.from({ length: 5 }, (_, i) => i + 27);
@@ -24,7 +25,7 @@ export default function DateList({ title, events, show }) {
         >
           <p className="text-4xl font-black">{title}</p>
           {open ? (
-            <img
+            <Image
               src="/chevron-down.svg"
               width={12}
               height={12}
@@ -32,7 +33,7 @@ export default function DateList({ title, events, show }) {
               className="w-12 h-12"
             />
           ) : (
-            <img
+            <Image
               src="/chevron-right.svg"
               width={12}
               height={12}
@@ -50,15 +51,18 @@ export default function DateList({ title, events, show }) {
           <div className="flex flex-col md:flex-row gap-12 items-stretch">
             <div className="grid grid-cols-7 gap-x-1 lg:gap-x-8 gap-y-5 text-xl text-center">
               {titles.map((e) => (
-                <p>{e}</p>
+                <p key={e}>{e}</p>
               ))}
               {datesPrevious.map((e) => (
-                <p className="w-10 px-2 py-1.5 opacity-[30%]">{e}</p>
+                <p key={e} className="w-10 px-2 py-1.5 opacity-[30%]">
+                  {e}
+                </p>
               ))}
               {datesCurrent.map((e) =>
                 events.some((event) => event.day === e) ? (
                   selected === e ? (
                     <button
+                      key={e}
                       onClick={() => setSelected(-1)}
                       className="w-10 px-2 py-1.5 relative bg-secondary text-grayLight rounded-full"
                     >
@@ -66,6 +70,7 @@ export default function DateList({ title, events, show }) {
                     </button>
                   ) : (
                     <button
+                      key={e}
                       onClick={() => setSelected(e)}
                       className="w-10 px-2 py-1.5 relative hover:bg-gray transition-colors rounded-full"
                     >
@@ -74,7 +79,9 @@ export default function DateList({ title, events, show }) {
                     </button>
                   )
                 ) : (
-                  <p className="w-10 px-2 py-1.5">{e}</p>
+                  <p key={e} className="w-10 px-2 py-1.5">
+                    {e}
+                  </p>
                 ),
               )}
             </div>
@@ -88,7 +95,7 @@ export default function DateList({ title, events, show }) {
                   {selected}
                 </p>
                 {dayEvents.events.map((e) => (
-                  <div>
+                  <div key={e}>
                     <p className="font-bold">
                       {e.split(":")[0]}
                       {":"}
