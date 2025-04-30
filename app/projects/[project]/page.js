@@ -1,7 +1,6 @@
 import { tagColors } from "@/app/components/ProjectCard";
 import { client } from "@/sanity/lib/client";
 import { urlForImage } from "@/sanity/lib/image";
-import { tryGetImageDimensions } from "@sanity/asset-utils";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 

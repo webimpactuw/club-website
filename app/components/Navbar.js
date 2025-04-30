@@ -14,8 +14,8 @@ const navigationData = [
     href: "/projects",
   },
   // {
-  //   title: "Schedule",
-  //   href: "/schedule",
+  //   title: "Calendar",
+  //   href: "/calendar",
   // },
 ];
 
