@@ -3,12 +3,22 @@ export default {
   title: "Day",
   type: "document",
   fields: [
-    // TODO: Add date field
-    // TODO: Add title field
     {
       name: "day",
       title: "Day Number",
       type: "number",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "date",
+      title: "Date",
+      type: "date",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
