@@ -36,8 +36,9 @@ export default function Footer() {
             <Image
               src="/logo_main.svg"
               alt="Web Impact Logo"
-              width={175}
-              height={60}
+              className="h-12 w-auto"
+              width={158}
+              height={48}
             />
             <p className="text-primary">
               © Web Impact UW 2021-

@@ -1,19 +1,29 @@
 export default {
   name: "eventDay",
-  title: "Day",
+  title: "Date",
   type: "document",
   fields: [
-    // TODO: Add date field
-    // TODO: Add title field
     {
-      name: "day",
-      title: "Day Number",
-      type: "number",
+      name: "date",
+      title: "Date",
+      type: "date",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "category",
+      title: "Category (Coding/Design/etc.)",
+      type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       name: "events",
-      title: "Event List",
+      title: "Event List (text before colon ':' is bolded)",
       type: "array",
       of: [{ type: "string" }],
     },
