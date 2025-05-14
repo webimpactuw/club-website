@@ -17,17 +17,28 @@ const monthNames = [
   "December",
 ];
 
-export default function Month({ number, events }) {
+const titles = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+const monthCounts = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+export default function Month({ number, events, firstDay }) {
   const [dayEvents, setDayEvents] = useState([]);
   const [selected, setSelected] = useState(-1);
+  const datesPrevious = Array.from(
+    { length: firstDay },
+    (_, i) => i + (monthCounts[number - 1] - firstDay + 1),
+  );
+  const datesCurrent = Array.from(
+    { length: monthCounts[number] },
+    (_, i) => i + 1,
+  );
+  const datesFuture = Array.from(
+    { length: 7 - firstDay - Math.floor(monthCounts[number] % 7) },
+    (_, i) => i + 1,
+  );
 
   useEffect(() => {
     setDayEvents(events.find((e) => e.day === selected));
   }, [events, selected]);
-
-  const titles = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-  const datesPrevious = Array.from({ length: 5 }, (_, i) => i + 27);
-  const datesCurrent = Array.from({ length: 30 }, (_, i) => i + 1);
 
   return (
     <>
@@ -68,6 +79,11 @@ export default function Month({ number, events }) {
               </p>
             ),
           )}
+          {datesFuture.map((e) => (
+            <p key={e} className="w-10 px-2 py-1.5 opacity-[30%] mx-auto">
+              {e}
+            </p>
+          ))}
         </div>
         {selected > -1 && dayEvents ? (
           <div className="relative space-y-3 bg-secondary p-6 h-72 md:h-auto w-full md:w-[17rem] shrink-0 rounded-[2rem] text-white">

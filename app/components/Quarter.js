@@ -6,6 +6,29 @@ import Month from "./Month";
 
 const quarterNames = ["Winter", "Spring", "Fall", "Fall"];
 
+// Calculates first day of week per month/year
+function zellersCongruence(year, month) {
+  if (month < 2) {
+    month += 12;
+    year -= 1;
+  }
+
+  const q = 1;
+  const m = month + 1;
+  const K = year % 100;
+  const J = Math.floor(year / 100);
+
+  return (
+    (q +
+      Math.floor((13 * (m + 1)) / 5) +
+      K +
+      Math.floor(K / 4) +
+      Math.floor(J / 4) +
+      3 * J) %
+    7
+  );
+}
+
 export default function Quarter({ index, events, show }) {
   const [open, setOpen] = useState(show);
 
@@ -51,7 +74,15 @@ export default function Quarter({ index, events, show }) {
       {open && (
         <div className="h-auto mb-4 px-0 lg:px-12 gap-8 lg:gap-12">
           {Object.keys(months).map((m, i) => (
-            <Month key={i} number={m - 1} events={months[m]} />
+            <Month
+              key={i}
+              number={m - 1}
+              events={months[m]}
+              firstDay={zellersCongruence(
+                Number(events[0].date.slice(0, 4)),
+                m,
+              )}
+            />
           ))}
         </div>
       )}
