@@ -16,6 +16,12 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "category",
+      title: "Category",
+      type: "string",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "events",
       title: "Event List",
       type: "array",

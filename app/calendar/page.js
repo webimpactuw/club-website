@@ -1,7 +1,7 @@
 import { client } from "@/sanity/lib/client";
-import DateList from "../components/DateList";
+import Quarter from "../components/Quarter";
 
-// // To fix bug where data is not immediately updated from Sanity
+// To fix bug where data is not immediately updated from Sanity
 export const revalidate = 60;
 
 async function getEvents() {
@@ -41,11 +41,11 @@ export default async function About() {
       {Object.keys(quarters)
         .sort(sortNames)
         .map((quarterID, i) => (
-          <DateList
+          <Quarter
             key={i}
             index={quarterID}
             events={quarters[quarterID]}
-            show={i === 0}
+            show={i < 2}
           />
         ))}
     </div>

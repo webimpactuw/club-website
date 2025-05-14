@@ -72,7 +72,7 @@ export default function Month({ number, events }) {
         {selected > -1 && dayEvents ? (
           <div className="relative space-y-3 bg-secondary p-6 h-72 md:h-auto w-full md:w-[17rem] shrink-0 rounded-[2rem] text-white">
             <div className="flex items-center gap-4">
-              <p className="text-3xl font-bold">{dayEvents.title}</p>
+              <p className="text-3xl font-bold">{dayEvents.category}</p>
               <hr className="flex-1 h-px bg-gray"></hr>
             </div>
             <p className="absolute left-4 -bottom-4 text-black opacity-25 font-bold text-[7rem]">

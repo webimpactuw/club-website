@@ -6,7 +6,7 @@ import Month from "./Month";
 
 const quarterNames = ["Winter", "Spring", "Fall", "Fall"];
 
-export default function DateList({ index, events, show }) {
+export default function Quarter({ index, events, show }) {
   const [open, setOpen] = useState(show);
 
   const months = {};
