@@ -39,7 +39,14 @@ export default function Navbar() {
           </Link>
           <ul className="flex items-center justify-end gap-12 text-sm font-medium">
             {navigationData.map((item) => (
-              <li className="md:hover:underline" key={item.href}>
+              <li
+                className={
+                  pathname === item.href
+                    ? "underline pointer-events-none"
+                    : "md:hover:underline"
+                }
+                key={item.href}
+              >
                 <Link href={item.href}>{item.title}</Link>
               </li>
             ))}

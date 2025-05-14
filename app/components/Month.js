@@ -25,7 +25,7 @@ export default function Month({ number, events, firstDay }) {
   const [selected, setSelected] = useState(-1);
   const datesPrevious = Array.from(
     { length: firstDay },
-    (_, i) => i + (monthCounts[number - 1] - firstDay + 1),
+    (_, i) => i + (monthCounts[(number + 11) % 12] - firstDay + 1),
   );
   const datesCurrent = Array.from(
     { length: monthCounts[number] },
@@ -46,10 +46,10 @@ export default function Month({ number, events, firstDay }) {
       <div className="flex flex-col md:flex-row gap-12 items-stretch">
         <div className="grid grid-cols-7 gap-x-1 lg:gap-x-8 gap-y-5 text-xl text-center">
           {titles.map((e) => (
-            <p key={e}>{e}</p>
+            <p key={e.day}>{e}</p>
           ))}
           {datesPrevious.map((e) => (
-            <p key={e} className="w-10 px-2 py-1.5 opacity-[30%] mx-auto">
+            <p key={e.day} className="w-10 px-2 py-1.5 opacity-[30%] mx-auto">
               {e}
             </p>
           ))}
@@ -57,7 +57,7 @@ export default function Month({ number, events, firstDay }) {
             events.some((event) => event.day === e) ? (
               selected === e ? (
                 <button
-                  key={e}
+                  key={e.day}
                   onClick={() => setSelected(-1)}
                   className="w-10 px-2 py-1.5 relative bg-secondary text-grayLight rounded-full mx-auto"
                 >
@@ -65,7 +65,7 @@ export default function Month({ number, events, firstDay }) {
                 </button>
               ) : (
                 <button
-                  key={e}
+                  key={e.day}
                   onClick={() => setSelected(e)}
                   className="w-10 px-2 py-1.5 relative hover:bg-gray transition-colors rounded-full mx-auto"
                 >
@@ -74,13 +74,13 @@ export default function Month({ number, events, firstDay }) {
                 </button>
               )
             ) : (
-              <p key={e} className="w-10 px-2 py-1.5 mx-auto">
+              <p key={e.day} className="w-10 px-2 py-1.5 mx-auto">
                 {e}
               </p>
             ),
           )}
           {datesFuture.map((e) => (
-            <p key={e} className="w-10 px-2 py-1.5 opacity-[30%] mx-auto">
+            <p key={e.day} className="w-10 px-2 py-1.5 opacity-[30%] mx-auto">
               {e}
             </p>
           ))}
@@ -95,7 +95,7 @@ export default function Month({ number, events, firstDay }) {
               {selected}
             </p>
             {dayEvents.events.map((e) => (
-              <div key={e}>
+              <div key={e.day}>
                 <p className="font-bold mx-auto">
                   {e.split(":")[0]}
                   {":"}

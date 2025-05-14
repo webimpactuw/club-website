@@ -18,15 +18,15 @@ function zellersCongruence(year, month) {
   const K = year % 100;
   const J = Math.floor(year / 100);
 
-  return (
+  const h =
     (q +
       Math.floor((13 * (m + 1)) / 5) +
       K +
       Math.floor(K / 4) +
-      Math.floor(J / 4) +
-      3 * J) %
-    7
-  );
+      Math.floor(J / 4) -
+      2 * J) %
+    7;
+  return (h + 6) % 7;
 }
 
 export default function Quarter({ index, events, show }) {
@@ -83,7 +83,7 @@ export default function Quarter({ index, events, show }) {
               events={months[m]}
               firstDay={zellersCongruence(
                 Number(events[0].date.slice(0, 4)),
-                m,
+                m - 1,
               )}
             />
           ))}
