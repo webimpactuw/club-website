@@ -31,8 +31,9 @@ export default function Navbar() {
             <Image
               src={pathname === "/" ? "/logo_main.svg" : "/logo_light.svg"}
               alt="Web Impact Logo"
-              width={175}
-              height={60}
+              className="h-12 w-auto"
+              width={158}
+              height={48}
               priority
             />
           </Link>

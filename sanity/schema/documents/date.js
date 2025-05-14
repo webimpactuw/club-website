@@ -17,13 +17,13 @@ export default {
     },
     {
       name: "category",
-      title: "Category",
+      title: "Category (Coding/Design/etc.)",
       type: "string",
       validation: (Rule) => Rule.required(),
     },
     {
       name: "events",
-      title: "Event List",
+      title: "Event List (text before colon ':' is bolded)",
       type: "array",
       of: [{ type: "string" }],
     },

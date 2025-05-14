@@ -42,7 +42,7 @@ export default function Month({ number, events, firstDay }) {
 
   return (
     <>
-      <p className="text-3xl font-bold w-full mb-6">{monthNames[number]}</p>
+      <p className="text-3xl font-bold w-full">{monthNames[number]}</p>
       <div className="flex flex-col md:flex-row gap-12 items-stretch">
         <div className="grid grid-cols-7 gap-x-1 lg:gap-x-8 gap-y-5 text-xl text-center">
           {titles.map((e) => (
@@ -100,7 +100,7 @@ export default function Month({ number, events, firstDay }) {
                   {e.split(":")[0]}
                   {":"}
                 </p>
-                <p className="font-light">{e.split(":")[1]}</p>
+                <p className="font-light">{e.split(":").slice(1).join(":")}</p>
               </div>
             ))}
           </div>

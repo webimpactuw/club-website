@@ -48,8 +48,11 @@ export default function Quarter({ index, events, show }) {
           className="flex transition-opacity md:hover:opacity-50"
           onClick={() => setOpen(!open)}
         >
-          <p className="text-4xl font-black">
+          <p className="text-4xl font-black hidden sm:block">
             {`${quarterNames[Number(index.split(" ")[1])]} Quarter ${index.split(" ")[0]}`}
+          </p>
+          <p className="text-4xl font-bold sm:hidden">
+            {`${quarterNames[Number(index.split(" ")[1])]} ${index.split(" ")[0]}`}
           </p>
           {open ? (
             <Image
@@ -72,7 +75,7 @@ export default function Quarter({ index, events, show }) {
         <hr className="flex-1 h-px my-auto ml-2 bg-grayDark opacity-25" />
       </div>
       {open && (
-        <div className="h-auto mb-4 px-0 lg:px-12 gap-8 lg:gap-12">
+        <div className="h-auto mb-4 px-0 lg:px-12 space-y-6 lg:space-y-10">
           {Object.keys(months).map((m, i) => (
             <Month
               key={i}
