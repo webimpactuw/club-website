@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-export default function DateList({ title, events, show }) {
+export default function DateList({ month, title, events, show }) {
   const [open, setOpen] = useState(show);
   const [selected, setSelected] = useState(-1);
   const [dayEvents, setDayEvents] = useState({});
@@ -47,7 +47,7 @@ export default function DateList({ title, events, show }) {
 
       {open && (
         <div className="h-auto mb-4 px-0 lg:px-12 gap-8 lg:gap-12">
-          <p className="text-3xl font-black w-full mb-6">September</p>
+          <p className="text-3xl font-black w-full mb-6">{month}</p>
           <div className="flex flex-col md:flex-row gap-12 items-stretch">
             <div className="grid grid-cols-7 gap-x-1 lg:gap-x-8 gap-y-5 text-xl text-center">
               {titles.map((e) => (

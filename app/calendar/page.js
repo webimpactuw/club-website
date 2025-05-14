@@ -10,36 +10,55 @@ async function getEvents() {
   return events;
 }
 
+const quarterNames = [
+  "Winter", "Winter", "Winter", 
+  "Spring", "Spring", "Spring",
+  "Fall", "Fall", "Fall",
+  "Fall", "Fall", "Fall",
+];
+
+const monthNames = [
+  "January", "February", "March", 
+  "April", "May", "June",
+  "July", "August", "September",
+  "October", "November", "December",
+];
+
 export default async function About() {
   const events = await getEvents();
 
-  // const testEvents = [
-  //   {
-  //     day: 26,
-  //     title: "Coding",
-  //     events: [
-  //       "Beginner (5-6): Intro to web development",
-  //       "Advanced (6-7): Refresher on HTML/CSS/JS",
-  //     ],
-  //   },
-  //   {
-  //     day: 27,
-  //     title: "Club",
-  //     events: ["Kickoff Meeting (5-6): Learn how you can get involved!"],
-  //   },
-  //   {
-  //     day: 28,
-  //     title: "Design",
-  //     events: [
-  //       "Beginner (5-6): Intro to web design",
-  //       "Advanced (6-7): Refresher on visual hierarchy",
-  //     ],
-  //   },
-  // ];
+  // Group events into quarters
+  let quarters = {};
+  events.forEach(e => {
+    const yearMonth = e.date.slice(0, 7)
+    if (!quarters[yearMonth]) {
+      quarters[yearMonth] = [];
+    }
+    e.day = Number(e.date.slice(8, 10))
+    quarters[yearMonth].push(e);
+  })
+  
+  const sortNames = (a, b) => {
+    if (a > b) {
+      return -1;
+    } else if (a < b) {
+      return 1;
+    } else {
+      return 0;
+    }
+  };
 
   return (
     <div className="max-w-[96rem] mx-auto relative flex flex-col gap-6 md:gap-12 p-6 md:py-12 md:px-20">
-      <DateList title="Fall Quarter 2024" events={events} show={true} />
+      {Object.keys(quarters).sort(sortNames).map((q, i) =>
+        <DateList
+          key={i}
+          month={monthNames[Number(q.slice(5, 7)) - 1]}
+          title={`${quarterNames[(Number(q.slice(5, 7)) - 1)]} Quarter ${q.slice(0, 4)}`}
+          events={quarters[q]}
+          show={true}
+        />
+      )}
     </div>
   );
 }

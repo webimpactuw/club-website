@@ -1,14 +1,8 @@
 export default {
   name: "eventDay",
-  title: "Day",
+  title: "Date",
   type: "document",
   fields: [
-    {
-      name: "day",
-      title: "Day Number",
-      type: "number",
-      validation: (Rule) => Rule.required(),
-    },
     {
       name: "date",
       title: "Date",
