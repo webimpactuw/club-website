@@ -66,7 +66,7 @@ export default async function About() {
               <p className="font-black text-3xl">‘23</p>
             </div>
             <div>
-              <p className="font-bold text-2xl">The Future</p>
+              <p className="font-bold text-2xl">Always Growing</p>
               <p className="text-primary">
                 We&apos;re always looking for new ways to build community and
                 increase our impact.
@@ -74,6 +74,21 @@ export default async function About() {
             </div>
           </div>
           <div className="hidden lg:flex w-0 h-[22rem] border-dashed border-2 ml-10 border-secondary" />
+          <div className="hidden lg:flex w-5 h-5 rounded-full bg-white border-4 border-secondary absolute -bottom-2.5 left-8 z-10" />
+        </div>
+        <div className="max-w-[22rem] relative">
+          <div className="flex items-center gap-4">
+            <div className="shrink-0 z-10 rounded-full bg-lightPurple border-2 border-secondary h-20 w-20 flex items-center justify-center">
+              <p className="font-black text-3xl">‘25</p>
+            </div>
+            <div className="shrink-1">
+              <p className="font-bold text-2xl">Upcoming</p>
+              <p className="text-primary text-wrap">
+                Exciting plans are underway to expand our reach and enhance our community on campus. 
+              </p>
+            </div>
+          </div>
+          <div className="hidden lg:flex w-0 h-[28rem] border-dashed border-2 ml-10 border-secondary" />
           <div className="hidden lg:flex w-5 h-5 rounded-full bg-white border-4 border-secondary absolute -bottom-2.5 left-8 z-10" />
         </div>
         <hr className="absolute top-0 bottom-0 lg:left-0 lg:right-0 lg:top-auto lg:bottom-auto border border-grayDark opacity-25 h-full lg:h-auto ml-10 lg:w-full max-w-[calc(100%-5rem)]" />
