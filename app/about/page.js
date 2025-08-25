@@ -136,28 +136,28 @@ export default async function About() {
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
-          <p className="font-bold text-2xl w-80 shrink-0">Activities</p>
+          <p className="font-bold text-2xl w-80 shrink-0">Social Media</p>
           <p className="lg:hidden"></p>
           {sort(officers)
-            .filter((e) => e.role === "activities")
+            .filter((e) => e.role === "social-media")
             .map((officer, index) => (
               <OfficerCard
                 officer={officer}
-                title="Activities Director"
+                title="Social Media Director"
                 key={index}
               />
             ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
-          <p className="font-bold text-2xl w-80 shrink-0">Projects</p>
+          <p className="font-bold text-2xl w-80 shrink-0">Finance</p>
           <p className="lg:hidden"></p>
           {sort(officers)
-            .filter((e) => e.role === "projects")
+            .filter((e) => e.role === "finance")
             .map((officer, index) => (
               <OfficerCard
                 officer={officer}
-                title="Project Coordinator"
+                title="Finance Director"
                 key={index}
               />
             ))}
@@ -174,7 +174,8 @@ async function getOfficers() {
     name,
     index,
     role,
-    image
+    image, 
+    linkedIn
   }`;
 
   const officers = await client.fetch(query);

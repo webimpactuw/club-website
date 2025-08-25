@@ -23,8 +23,8 @@ export default {
           { title: "President", value: "president" },
           { title: "Coding", value: "coding" },
           { title: "Design", value: "design" },
-          { title: "Activities", value: "activities" },
-          { title: "Projects", value: "projects" },
+          { title: "Social Media", value: "social-media" },
+          { title: "Finance", value: "finance" },
         ],
       },
       validation: (Rule) => Rule.required(),
@@ -37,6 +37,14 @@ export default {
       options: {
         hotspot: true,
       },
+    },
+    {
+      name: "linkedIn",
+      title: "LinkedIn",
+      type: "url", 
+      validation: (Rule) => Rule.required().uri({
+        scheme: ["http", "https"],
+      }),
     },
   ],
 };
