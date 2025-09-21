@@ -25,6 +25,7 @@ export default {
           { title: "Design", value: "design" },
           { title: "Social Media", value: "social-media" },
           { title: "Finance", value: "finance" },
+          { title: "Outreach", value: "outreach" },
         ],
       },
       validation: (Rule) => Rule.required(),
