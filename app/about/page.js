@@ -113,12 +113,17 @@ export default async function About() {
           Meet the Team
         </h1>
         <div className="grid-cols-1 sm:grid-cols-2 grid lg:flex lg:overflow-x-auto gap-8">
-          <p className="font-bold text-2xl w-80 shrink-0">President</p>
+          <p className="font-bold text-2xl w-80 shrink-0">President & Vice President</p>
           <p className="lg:hidden"></p>
           {sort(officers)
             .filter((e) => e.role === "president")
             .map((officer, index) => (
               <OfficerCard officer={officer} title="President" key={index} />
+            ))}
+          {sort(officers)
+            .filter((e) => e.role === "vice-president")
+            .map((officer, index) => (
+              <OfficerCard officer={officer} title="Vice President" key={index} />
             ))}
         </div>
         <hr className="w-full border border-grayDark opacity-25" />

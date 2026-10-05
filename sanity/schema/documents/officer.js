@@ -21,6 +21,7 @@ export default {
       options: {
         list: [
           { title: "President", value: "president" },
+          { title: "Vice President", value: "vice-president" },
           { title: "Coding", value: "coding" },
           { title: "Design", value: "design" },
           { title: "Social Media", value: "social-media" },
